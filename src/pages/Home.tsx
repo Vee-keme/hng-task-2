@@ -18,6 +18,7 @@ const Home = () => {
 
   return (
     <>
+      {/* HERO */}
       {isAboveMediumScreens ? (
         <section className=" w-11/12 text-center space-y-8 py-10">
           <div className="flex justify-between items-center">
@@ -87,6 +88,7 @@ const Home = () => {
         </section>
       )}
 
+      {/* LATEST COLLECTIONS */}
       {isAboveMediumScreens ? (
         <section className="w-full bg-slate-50 py-10">
           <div className="w-11/12 m-auto">
@@ -449,116 +451,226 @@ const Home = () => {
         </section>
       )}
 
-      <section className="tagprops w-full py-10 bg-slate-50">
-        <div className="w-11/12 m-auto">
-          <div className="flex justify-between items-center m-auto ">
-            <TagProp text="Men" />
-            <TagProp text="Women" />
-            <TagProp text="Kids" />
-            <TagProp text="Perfumes" />
-            <TagProp text="Sport " />
-            <TagProp text="Jewelry" />
-          </div>
+      {/* SMALL CARDS */}
+      {isAboveMediumScreens ? (
+        <section className="tagprops w-full py-10 bg-slate-50">
+          <div className="w-11/12 m-auto">
+            <div className="flex justify-between items-center m-auto ">
+              <TagProp text="Men" />
+              <TagProp text="Women" />
+              <TagProp text="Kids" />
+              <TagProp text="Perfumes" />
+              <TagProp text="Sport " />
+              <TagProp text="Jewelry" />
+            </div>
 
-          <div className="tagprop-items ">
-            <div className="cards w-full my-5 flex justify-between items-center gap-4 flex-wrap">
-              <SmallCard />
-              <button className="bg-primaryGray/80 text-slate-50 px-4 py-2 rounded-lg mx-auto">
-                See More &gt;&gt;&gt;
-              </button>
+            <div className="tagprop-items ">
+              <div className="cards w-full my-5 flex justify-between items-center gap-4 flex-wrap">
+                <SmallCard />
+                <button className="bg-primaryGray/80 text-slate-50 px-4 py-2 rounded-lg mx-auto">
+                  See More &gt;&gt;&gt;
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : (
+        <section className="tagprops w-full py-10 bg-slate-50">
+          <div className="w-11/12 m-auto">
+            <div className="flex justify-between gap-2 items-center m-auto ">
+              <TagProp text="Men" />
+              <TagProp text="Women" />
+              <TagProp text="Kids" />
+              <TagProp text="Perfumes" />
+              <TagProp text="Sport " />
+              <TagProp text="Jewelry" />
+            </div>
 
-      <section className="w-full py-10 bg-slate-50">
-        <div className="w-11/12 m-auto">
-          <div className="bg-primaryGreen/50 flex justify-between rounded-2xl overflow-hidden h-[60vh]">
-            <div className="p-8 flex flex-col justify-between">
-              <div className="w-[60%]">
-                <h3 className="text-slate-50 text-5xl font-semibold leading-[60px]">
-                  Our Curated Summer Collection
-                </h3>
+            <div className="tagprop-items ">
+              <div className="cards w-full my-5 flex justify-between items-center gap-4 flex-wrap ">
+                <SmallCard />
+
+                <button className="bg-primaryGray/80 text-slate-50 px-4 py-2 rounded-lg mx-auto">
+                  See More &gt;&gt;&gt;
+                </button>
               </div>
-              <div className="w-[60%]">
-                <p className="font-[400] text-xl leading-10">
-                  Explore our curated summer collection featuring trending
-                  styles, vibrant colors and lightweight fabrics perfect for
-                  long days and nights.
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* GREEN CARD */}
+      {isAboveMediumScreens ? (
+        <section className="w-full py-10 bg-slate-50">
+          <div className="w-11/12 m-auto">
+            <div className="bg-primaryGreen/50 flex justify-between rounded-2xl overflow-hidden h-[60vh]">
+              <div className="p-8 flex flex-col justify-between">
+                <div className="w-[60%]">
+                  <h3 className="text-slate-50 text-5xl font-semibold leading-[60px]">
+                    Our Curated Summer Collection
+                  </h3>
+                </div>
+                <div className="w-[60%]">
+                  <p className="font-[400] text-xl leading-10">
+                    Explore our curated summer collection featuring trending
+                    styles, vibrant colors and lightweight fabrics perfect for
+                    long days and nights.
+                  </p>
+                </div>
+                <button className="px-6 py-2 bg-white text-black rounded-md font-semibold w-fit">
+                  Explore Now
+                </button>
+              </div>
+
+              <img src={Hat2} alt="hat and leaf" className="object-cover" />
+            </div>
+          </div>
+        </section>
+      ) : (
+        <section className="w-full py-10 bg-slate-50">
+          <div className="w-11/12 m-auto">
+            <div className="bg-primaryGreen/50 flex justify-between rounded-2xl overflow-hidden">
+              <div className="p-8 flex flex-col justify-between gap-3">
+                <div className="w-[80%]">
+                  <h3 className="text-slate-50 text-2xl font-semibold leading-[4s0px]">
+                    Our Curated Summer Collection
+                  </h3>
+                </div>
+                <div className="w-[80%]">
+                  <p className="font-[400] text-lg leading-7">
+                    Explore our curated summer collection featuring trending
+                    styles, vibrant colors and lightweight fabrics perfect for
+                    long days and nights.
+                  </p>
+                </div>
+                <button className="px-6 py-2 bg-white text-black rounded-md font-semibold w-fit">
+                  Explore Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {isAboveMediumScreens ? (
+        <section className="w-full bg-slate-50 py-10">
+          <div className="w-11/12 m-auto">
+            <div className="w-full flex justify-between items-center text-black">
+              <p className="font-bold text-4xl">Browse by category</p>
+              <div className="flex gap-2">
+                <button className="flex items-center justify-center bg-primaryGray text-slate-50 px-3 py-1 rounded-l-xl">
+                  &lt;
+                </button>
+                <button className="flex items-center justify-center bg-primaryGray text-slate-50 px-3 py-1 rounded-r-xl">
+                  &gt;
+                </button>
+              </div>
+            </div>
+
+            <div className="cards w-full my-5 flex justify-between items-center gap-4">
+              <div className="lastCard space-y-2">
+                <div className="bg-mediumGray w-fit p-6 rounded-lg">
+                  <img src={BlackShirt} alt="items" />
+                </div>
+                <h3 className="text-primaryGray text-center font-bold text-xl">
+                  Causal Wear
+                </h3>
+                <p className="text-mediumGray text-center text-lg">
+                  Over 20 categories in stock
                 </p>
               </div>
-              <button className="px-6 py-2 bg-white text-black rounded-md font-semibold w-fit">
-                Explore Now
-              </button>
-            </div>
-
-            <img src={Hat2} alt="hat and leaf" />
-          </div>
-        </div>
-      </section>
-
-      <section className="w-full bg-slate-50 py-10">
-        <div className="w-11/12 m-auto">
-          <div className="w-full flex justify-between items-center text-black">
-            <p className="font-bold text-4xl">Browse by category</p>
-            <div className="flex gap-2">
-              <button className="flex items-center justify-center bg-primaryGray text-slate-50 px-3 py-1 rounded-l-xl">
-                &lt;
-              </button>
-              <button className="flex items-center justify-center bg-primaryGray text-slate-50 px-3 py-1 rounded-r-xl">
-                &gt;
-              </button>
-            </div>
-          </div>
-
-          <div className="cards w-full my-5 flex justify-between items-center gap-4">
-            <div className="lastCard space-y-2">
-              <div className="bg-mediumGray w-fit p-6 rounded-lg">
-                <img src={BlackShirt} alt="items" />
+              <div className="lastCard space-y-2">
+                <div className="bg-mediumGray w-fit p-6 rounded-lg">
+                  <img src={BlackShirt} alt="items" />
+                </div>
+                <h3 className="text-primaryGray text-center font-bold text-xl">
+                  Causal Wear
+                </h3>
+                <p className="text-mediumGray text-center text-lg">
+                  Over 20 categories in stock
+                </p>
               </div>
-              <h3 className="text-primaryGray text-center font-bold text-xl">
-                Causal Wear
-              </h3>
-              <p className="text-mediumGray text-center text-lg">
-                Over 20 categories in stock
-              </p>
-            </div>
-            <div className="lastCard space-y-2">
-              <div className="bg-mediumGray w-fit p-6 rounded-lg">
-                <img src={BlackShirt} alt="items" />
+              <div className="lastCard space-y-2">
+                <div className="bg-mediumGray w-fit p-6 rounded-lg">
+                  <img src={BlackShirt} alt="items" />
+                </div>
+                <h3 className="text-primaryGray text-center font-bold text-xl">
+                  Causal Wear
+                </h3>
+                <p className="text-mediumGray text-center text-lg">
+                  Over 20 categories in stock
+                </p>
               </div>
-              <h3 className="text-primaryGray text-center font-bold text-xl">
-                Causal Wear
-              </h3>
-              <p className="text-mediumGray text-center text-lg">
-                Over 20 categories in stock
-              </p>
-            </div>
-            <div className="lastCard space-y-2">
-              <div className="bg-mediumGray w-fit p-6 rounded-lg">
-                <img src={BlackShirt} alt="items" />
+              <div className="lastCard space-y-2">
+                <div className="bg-mediumGray w-fit p-6 rounded-lg">
+                  <img src={BlackShirt} alt="items" />
+                </div>
+                <h3 className="text-primaryGray text-center font-bold text-xl">
+                  Causal Wear
+                </h3>
+                <p className="text-mediumGray text-center text-lg">
+                  Over 20 categories in stock
+                </p>
               </div>
-              <h3 className="text-primaryGray text-center font-bold text-xl">
-                Causal Wear
-              </h3>
-              <p className="text-mediumGray text-center text-lg">
-                Over 20 categories in stock
-              </p>
-            </div>
-            <div className="lastCard space-y-2">
-              <div className="bg-mediumGray w-fit p-6 rounded-lg">
-                <img src={BlackShirt} alt="items" />
-              </div>
-              <h3 className="text-primaryGray text-center font-bold text-xl">
-                Causal Wear
-              </h3>
-              <p className="text-mediumGray text-center text-lg">
-                Over 20 categories in stock
-              </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : (
+        <section className="w-full bg-slate-50 py-10">
+          <div className="w-11/12 m-auto">
+            <div className="w-full flex justify-between items-center text-black">
+              <p className="font-bold text-xl">Browse by category</p>
+            </div>
+
+            <div className="cards w-full my-5 flex justify-between items-center gap-4">
+              <div className="lastCard space-y-2">
+                <div className="bg-mediumGray w-fit p-6 rounded-lg">
+                  <img src={BlackShirt} alt="items" />
+                </div>
+                <h3 className="text-primaryGray text-center font-bold text-xl">
+                  Causal Wear
+                </h3>
+                <p className="text-mediumGray text-center text-lg">
+                  Over 20 categories in stock
+                </p>
+              </div>
+              <div className="lastCard space-y-2">
+                <div className="bg-mediumGray w-fit p-6 rounded-lg">
+                  <img src={BlackShirt} alt="items" />
+                </div>
+                <h3 className="text-primaryGray text-center font-bold text-xl">
+                  Causal Wear
+                </h3>
+                <p className="text-mediumGray text-center text-lg">
+                  Over 20 categories in stock
+                </p>
+              </div>
+              <div className="lastCard space-y-2">
+                <div className="bg-mediumGray w-fit p-6 rounded-lg">
+                  <img src={BlackShirt} alt="items" />
+                </div>
+                <h3 className="text-primaryGray text-center font-bold text-xl">
+                  Causal Wear
+                </h3>
+                <p className="text-mediumGray text-center text-lg">
+                  Over 20 categories in stock
+                </p>
+              </div>
+              <div className="lastCard space-y-2">
+                <div className="bg-mediumGray w-fit p-6 rounded-lg">
+                  <img src={BlackShirt} alt="items" />
+                </div>
+                <h3 className="text-primaryGray text-center font-bold text-xl">
+                  Causal Wear
+                </h3>
+                <p className="text-mediumGray text-center text-lg">
+                  Over 20 categories in stock
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
     </>
   );
 };

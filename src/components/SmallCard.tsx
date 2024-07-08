@@ -10,7 +10,7 @@ const SmallCard = () => {
       {data.map((item, index) => {
         const { itemName } = item;
         return (
-          <div className="card flex-1 basis-[15%]" key={index}>
+          <div className="card flex-1 basis-[15%] " key={index}>
             <div className="border-2 rounded-xl border-mediumGray p-4 w-full flex flex-col items-center justify-center space-y-1">
               <div className=" bg-lightGray rounded-lg flex justify-center py-3 px-4 ">
                 <img
