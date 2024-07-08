@@ -1,4 +1,4 @@
-import Shirt from "../assets/shirt.png";
+import Shirt from "../assets/shirt.svg";
 
 import Shoe from "../assets/shoe.svg";
 import Man from "../assets/man.svg";
