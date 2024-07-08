@@ -2,17 +2,17 @@ import Heart from "../assets/heart.png";
 import Bag from "../assets/bag.png";
 import Star from "../assets/star.png";
 
-interface CardTypes {
-  itemTitle: string;
-}
+// interface CardTypes {
+//   itemTitle: string;
+// }
 
-const cardData = [
-  {
-    itemTitle: "French Kiss Bag",
-  },
-];
+// const cardData = [
+//   {
+//     itemTitle: "French Kiss Bag",
+//   },
+// ];
 
-const Card = ({ itemTitle }: CardTypes) => {
+const Card = () => {
   return (
     <>
       <div className="card flex-1 basis-[30%]">

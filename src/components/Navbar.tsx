@@ -68,15 +68,16 @@ const Navbar = () => {
           </div>
         </nav>
       ) : (
+        //MOBILE NAVBAR
         <nav className={`w-full ${flexCenter} py-3`}>
           <div className=" flex items-center justify-between w-11/12">
-            <div className="w-full flex justify-between items-center">
+            <div className="w-full flex justify-between items-center gap-5">
               <div>
-                <img src={Hamburger} alt="hamburger icon" />
+                <img src={Hamburger} alt="hamburger icon" className="" />
               </div>
 
               <div className="w-auto h-auto">
-                <img src={Logo} alt="Timbu shop Logo" />
+                <img src={Logo} alt="Timbu shop Logo" className="w-[70%]" />
               </div>
 
               <div
@@ -85,7 +86,7 @@ const Navbar = () => {
                 <img src={Search} alt="timbu-search-icon" />
                 <input
                   type="text"
-                  placeholder="Search"
+                  placeholder="Search..."
                   className="w-full bg-transparent focus:outline-none"
                 />
               </div>
