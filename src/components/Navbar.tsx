@@ -57,11 +57,12 @@ const Navbar = () => {
                 <p>EN/Currency</p>
               </div>
 
-              <div>
+              <div className=" bg-primaryGray p-[5px] rounded-full flex items-center justify-center">
                 <img
                   src={Bag}
                   alt="timbu-bag"
-                  className="bg-primaryGray p-1 rounded-full"
+
+                  // className="w-[90%] h-[90%] bg-primaryGray p-2 rounded-full"
                 />
               </div>
             </div>
@@ -91,12 +92,8 @@ const Navbar = () => {
                 />
               </div>
 
-              <div>
-                <img
-                  src={Bag}
-                  alt="timbu-bag"
-                  className="bg-primaryGray p-1 rounded-full"
-                />
+              <div className=" bg-primaryGray p-[5px] rounded-full flex items-center justify-center">
+                <img src={Bag} alt="timbu-bag" className="w-6" />
               </div>
             </div>
           </div>

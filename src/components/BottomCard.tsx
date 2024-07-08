@@ -4,7 +4,7 @@ const BottomCardData = [
   {
     image: BlackShirt,
     title: "Casual Wear",
-    categoryNumber: "Over 20 categories in stockr",
+    categoryNumber: "Over 20 categories in stock",
   },
   {
     image: BlackShirt,

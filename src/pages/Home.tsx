@@ -455,8 +455,8 @@ const Home = () => {
       {/* SMALL CARDS */}
       {isAboveMediumScreens ? (
         <section className="tagprops w-full py-10 bg-slate-50 ">
-          <div className="w-11/12 m-auto">
-            <div className="flex justify-between items-center m-auto overflow-x-hidden">
+          <div className="w-11/12 m-auto overflow-x-scroll">
+            <div className="flex justify-between items-center m-auto overflow-x-scroll">
               <TagProp text="Men" />
               <TagProp text="Women" />
               <TagProp text="Kids" />
