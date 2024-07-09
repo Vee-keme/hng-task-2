@@ -13,6 +13,7 @@ import TagProp from "../components/TagProp";
 import SmallCard from "../components/SmallCard";
 import useMediaQuery from "../hooks/useMediaQuery";
 import BottomCard from "../components/BottomCard";
+import { Link } from "react-router-dom";
 // import Card from "../components/Card";
 
 // interface CardTypes {
@@ -86,9 +87,12 @@ const Home = () => {
                   />
                 </div>
 
-                <button className="px-6 py-2 bg-white text-black rounded-md font-semibold">
+                <Link
+                  to="/cart"
+                  className="px-6 py-2 bg-white text-black rounded-md font-semibold"
+                >
                   Explore Now
-                </button>
+                </Link>
 
                 <div className="rounded-full overflow-hidden">
                   <img
@@ -118,9 +122,12 @@ const Home = () => {
             </div>
 
             <div className="flex justify-between items-center w-full">
-              <button className="px-6 py-2 bg-white text-black rounded-md font-semibold w-full">
+              <Link
+                to="/cart"
+                className="px-6 py-2 bg-white text-black rounded-md font-semibold w-full"
+              >
                 Explore Now
-              </button>
+              </Link>
             </div>
           </section>
         )}
