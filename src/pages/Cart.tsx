@@ -5,7 +5,7 @@ import Star from "../assets/star.png";
 import Instagram from "../assets/instagram.svg";
 import Whatsapp from "../assets/whatsapp.svg";
 import Twitter from "../assets/twitter.svg";
-import Bag from "../assets/bag-2.png";
+import Bag from "../assets/bag.png";
 import Bus from "../assets/bus.png";
 import Return from "../assets/return.png";
 
@@ -338,7 +338,7 @@ const Cart = () => {
                     Similar items you may like
                   </h3>
 
-                  <div className="cards w-full my-5 flex items-center gap-4">
+                  <div className="cards w-full my-5 flex items-center gap-6">
                     <div className="card w-[30%] min-w-[300px]">
                       <div className="border-2 rounded-lg border-mediumGray p-4 w-full">
                         <div className="space-y-2">
@@ -371,7 +371,7 @@ const Cart = () => {
                             </div>
                             <div className="flex text-primaryGray">
                               <span>
-                                <img src={PinkShoe} alt="star" />
+                                <img src={Star} alt="star" />
                               </span>
                               <p>2k rating</p>
                             </div>
@@ -430,7 +430,7 @@ const Cart = () => {
                             </div>
                             <div className="flex text-primaryGray">
                               <span>
-                                <img src={PinkShoe} alt="star" />
+                                <img src={Star} alt="star" />
                               </span>
                               <p>2k rating</p>
                             </div>
