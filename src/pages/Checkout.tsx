@@ -104,30 +104,58 @@ const Checkout = () => {
                     <p className="text-2xl font-semibold">Order Summary</p>
                   </div>
 
-                  <div className="w-11/12 mx-auto flex flex-col gap-4 py-2 ">
-                    <div className="w-full flex gap-3">
+                  <div className="w-11/12 mx-auto flex flex-col gap-4 py-2 border-b border-mediumGray">
+                    <div className="w-full flex gap-4 mt-4">
                       <div className="bg-lightGray w-[30%] p-1 rounded-lg ">
                         <img src={PinkShoe} alt="pink shoe" />
                       </div>
 
                       <div className="text-start">
-                        <p>Burberry Shine</p>
-                        <p>FENDI</p>
+                        <p className="font-bold text-lg">Burberry Shine</p>
+                        <p className="font-semibold text-thinborderGray">
+                          FENDI
+                        </p>
                       </div>
                     </div>
-                    <div>
+
+                    <div className=" space-y-1">
                       <div className="flex justify-between">
-                        <p>Subtotal</p>
-                        <span>$150</span>
+                        <p className="text-thinborderGray font-semibold">
+                          Subtotal
+                        </p>
+                        <span className="text-primaryGray text-lg font-semibold">
+                          $150
+                        </span>
                       </div>
                       <div className="flex justify-between">
-                        <p>Shipping</p>
-                        <span>$10</span>
+                        <p className="text-thinborderGray font-semibold">
+                          Shipping
+                        </p>
+                        <span className="text-primaryGray text-lg font-semibold">
+                          $10
+                        </span>
                       </div>
                       <div className="flex justify-between">
-                        <p>Tax</p>
-                        <span></span>$5
+                        <p className="text-thinborderGray font-semibold">Tax</p>
+                        <span className="text-primaryGray text-lg font-semibold">
+                          $5
+                        </span>
                       </div>
+                    </div>
+                  </div>
+
+                  <div className="w-11/12 mx-auto space-y-6 py-6">
+                    <div className="flex justify-between">
+                      <p className="text-primaryGray font-semibold">Total</p>
+                      <span className="text-primaryGray text-lg font-semibold">
+                        $165
+                      </span>
+                    </div>
+
+                    <div className="w-full mx-auto">
+                      <button className="px-20 py-4 bg-black text-white rounded-lg font-semibold">
+                        Place order
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -136,8 +164,62 @@ const Checkout = () => {
 
             <div className="under-card bg-white border border-mediumGray rounded-lg w-[69%] text-primaryGray">
               <div className=" p-5">
-                <div className="flex gap-4">
-                  <h3>Payment Method</h3>
+                <div className="flex flex-col">
+                  <h3 className="text-start text-2xl font-semibold my-3">
+                    Payment Method
+                  </h3>
+
+                  <div>
+                    <div className="flex flex-col gap-3 w-full text-primaryGray">
+                      <p className="text-start text-primaryGray font-semibold">
+                        Name on Card
+                      </p>
+                      <FormControl fullWidth>
+                        {/* <InputLabel id="Location">Location</InputLabel> */}
+                        <TextField
+                          id="nameOnCard"
+                          label="First & Last Name"
+                          variant="outlined"
+                        />
+                      </FormControl>
+
+                      <p className="text-start text-primaryGray font-semibold">
+                        Card number
+                      </p>
+                      <FormControl fullWidth>
+                        {/* <InputLabel id="Location">Location</InputLabel> */}
+                        <TextField
+                          id="cardNumber"
+                          label="0000 0000 0000 0000"
+                          variant="outlined"
+                        />
+                      </FormControl>
+                    </div>
+                    <div className="w-full flex justify-between items-end mt-4">
+                      <div className="space-y-3">
+                        <p className="text-primaryGray text-start font-semibold">
+                          Expiry
+                        </p>
+                        <TextField id="expiry" label="MM" variant="outlined" />
+                      </div>
+
+                      <div className="space-y-3">
+                        <p className="text-primaryGray text-start font-semibold"></p>
+                        <TextField
+                          id="expiry"
+                          label="YYYY"
+                          variant="outlined"
+                        />
+                      </div>
+
+                      <div className="space-y-3">
+                        <p className="text-primaryGray text-start font-semibold">
+                          CVV
+                        </p>
+                        <TextField id="cvv" label="CVV" variant="outlined" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
