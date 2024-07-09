@@ -2,7 +2,10 @@ import FooterLogo from "../assets/footerLogo.svg";
 import Instagram from "../assets/instagram.svg";
 import Twitter from "../assets/twitter.svg";
 import Whatsapp from "../assets/whatsapp.svg";
+import DownArrow from "../assets/downArrow.png";
+
 import useMediaQuery from "../hooks/useMediaQuery";
+
 const Footer = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
   // const isAboveMediumScreens = useMediaQuery("(min-width: 640px)");
@@ -21,9 +24,9 @@ const Footer = () => {
                 />
 
                 <div className="flex justify-between">
-                  <img src={Instagram} alt="" />
-                  <img src={Whatsapp} alt="" />
-                  <img src={Twitter} alt="" />
+                  <img src={Instagram} alt="icon" />
+                  <img src={Whatsapp} alt="icon" />
+                  <img src={Twitter} alt="icon" />
                 </div>
               </div>
 
@@ -65,17 +68,17 @@ const Footer = () => {
               <div className="footerLinks text-slate-50 flex flex-col gap-6">
                 <div className="flex justify-between">
                   <h3 className="">About</h3>
-                  <span>&lt;</span>
+                  <img src={DownArrow} alt="down arrow" className="invert" />
                 </div>
 
                 <div className="flex justify-between">
                   <h3 className="">Products</h3>
-                  <span>&lt;</span>
+                  <img src={DownArrow} alt="down arrow" className="invert" />
                 </div>
 
                 <div className="flex justify-between">
                   <h3 className="">Discover</h3>
-                  <span>&lt;</span>
+                  <img src={DownArrow} alt="down arrow" className="invert" />
                 </div>
               </div>
 
@@ -89,9 +92,9 @@ const Footer = () => {
                   />
 
                   <div className="w-full flex justify-between">
-                    <img src={Instagram} alt="" />
-                    <img src={Whatsapp} alt="" />
-                    <img src={Twitter} alt="" />
+                    <img src={Instagram} alt="icon" />
+                    <img src={Whatsapp} alt="icon" />
+                    <img src={Twitter} alt="icon" />
                   </div>
                 </div>
               </div>
