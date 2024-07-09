@@ -249,16 +249,60 @@ const Checkout = () => {
         <section className=" w-11/12 text-center space-y-8 py-10 mx-auto">
           <div className="container w-full space-y-4">
             <div className="flex flex-col justify-between">
-              <div className="left-card w-full bg-white border-2 border-mediumGray rounded-lg flex flex-col gap-6">
+              <div className="left-card w-full bg-white border-2 border-mediumGray rounded-lg flex flex-col">
                 {/* left */}
 
                 <div className="w-full p-5 border-b-2 border-mediumGray text-primaryGray">
                   <p className="text-2xl font-semibold">Order Summary</p>
                 </div>
-                <div className="flex flex-col gap-3 w-full text-primaryGray p-5">
-                  <h3 className="text-start text-2xl font-semibold my-3">
+
+                <div className="w-full mx-auto flex flex-col gap-4 border-b-2 border-mediumGray p-5">
+                  <div className="w-full flex gap-4">
+                    <div className="bg-lightGray w-[30%] p-1 rounded-lg ">
+                      <img src={PinkShoe} alt="pink shoe" />
+                    </div>
+
+                    <div className="text-start">
+                      <p className="font-bold text-lg text-primaryGray">
+                        Burberry Shine
+                      </p>
+                      <p className="font-semibold text-thinborderGray">FENDI</p>
+                    </div>
+                  </div>
+
+                  <div className=" space-y-1">
+                    <div className="flex justify-between">
+                      <p className="text-thinborderGray font-semibold">
+                        Subtotal
+                      </p>
+                      <span className="text-primaryGray text-lg font-semibold">
+                        $150
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <p className="text-thinborderGray font-semibold">
+                        Shipping
+                      </p>
+                      <span className="text-primaryGray text-lg font-semibold">
+                        $10
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <p className="text-thinborderGray font-semibold">Tax</p>
+                      <span className="text-primaryGray text-lg font-semibold">
+                        $5
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="w-full p-5 border-b-2 border-mediumGray text-primaryGray flex justify-center items-center">
+                  <h3 className="text-lg font-semibold self-center">
                     Shipping Address
                   </h3>
+                </div>
+
+                <div className="flex flex-col gap-1.5 w-full text-primaryGray p-5">
                   <p className="text-start text-primaryGray font-semibold">
                     Name
                   </p>
@@ -296,8 +340,8 @@ const Checkout = () => {
                   </FormControl>
                 </div>
 
-                <div className="w-full flex justify-between">
-                  <div className="space-y-3">
+                <div className="w-full flex justify-between flex-wrap p-5 gap-2 border-b-2 border-mediumGray">
+                  <div className="space-y-3 w-[45%]">
                     <p className="text-primaryGray text-start font-semibold">
                       City
                     </p>
@@ -308,7 +352,7 @@ const Checkout = () => {
                     />
                   </div>
 
-                  <div className="space-y-3">
+                  <div className="space-y-3 w-[45%]">
                     <p className="text-primaryGray text-start font-semibold">
                       State
                     </p>
@@ -319,57 +363,23 @@ const Checkout = () => {
                     />
                   </div>
 
-                  <div className="space-y-3">
+                  <div className="space-y-3 w-[45%]">
                     <p className="text-primaryGray text-start font-semibold">
                       Zip
                     </p>
                     <TextField id="zip" label="Zip Code" variant="outlined" />
                   </div>
                 </div>
+
+                <div className="w-full p-5 border-b-2 border-mediumGray text-primaryGray flex justify-center items-center">
+                  <h3 className="text-lg font-semibold self-center">
+                    Payment Method
+                  </h3>
+                </div>
               </div>
 
               <div className="right-card w-[29%] bg-white border-2 border-mediumGray rounded-lg">
                 <div className="text-primaryGray ">
-                  <div className="w-11/12 mx-auto flex flex-col gap-4 py-2 border-b border-mediumGray">
-                    <div className="w-full flex gap-4 mt-4">
-                      <div className="bg-lightGray w-[30%] p-1 rounded-lg ">
-                        <img src={PinkShoe} alt="pink shoe" />
-                      </div>
-
-                      <div className="text-start">
-                        <p className="font-bold text-lg">Burberry Shine</p>
-                        <p className="font-semibold text-thinborderGray">
-                          FENDI
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className=" space-y-1">
-                      <div className="flex justify-between">
-                        <p className="text-thinborderGray font-semibold">
-                          Subtotal
-                        </p>
-                        <span className="text-primaryGray text-lg font-semibold">
-                          $150
-                        </span>
-                      </div>
-                      <div className="flex justify-between">
-                        <p className="text-thinborderGray font-semibold">
-                          Shipping
-                        </p>
-                        <span className="text-primaryGray text-lg font-semibold">
-                          $10
-                        </span>
-                      </div>
-                      <div className="flex justify-between">
-                        <p className="text-thinborderGray font-semibold">Tax</p>
-                        <span className="text-primaryGray text-lg font-semibold">
-                          $5
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
                   <div className="w-11/12 mx-auto space-y-6 py-6">
                     <div className="flex justify-between">
                       <p className="text-primaryGray font-semibold">Total</p>
