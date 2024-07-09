@@ -15,15 +15,20 @@ import FormControl from "@mui/material/FormControl";
 // import TagProp from "../components/TagProp";
 import TextField from "@mui/material/TextField";
 
+import Card from "../assets/card.png";
+import Wallet from "../assets/wallet.png";
+import Transfer from "../assets/transfer.png";
+
 const Checkout = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
   return (
     <>
+      {/* <div></div> */}
       {isAboveMediumScreens ? (
         <section className=" w-11/12 text-center space-y-8 py-10 mx-auto">
           <div className="container w-full space-y-4">
             <div className="flex justify-between">
-              <div className="left-card w-[69%] bg-white border border-mediumGray rounded-lg p-5 flex flex-col gap-6">
+              <div className="left-card w-[69%] bg-white border-2 border-mediumGray rounded-lg p-5 flex flex-col gap-6">
                 {/* left */}
                 <div className="flex flex-col gap-3 w-full text-primaryGray">
                   <h3 className="text-start text-2xl font-semibold my-3">
@@ -98,7 +103,7 @@ const Checkout = () => {
                 </div>
               </div>
 
-              <div className="right-card w-[29%] bg-white border border-mediumGray rounded-lg">
+              <div className="right-card w-[29%] bg-white border-2 border-mediumGray rounded-lg">
                 <div className="text-primaryGray ">
                   <div className="w-full p-3 border-b border-mediumGray ">
                     <p className="text-2xl font-semibold">Order Summary</p>
@@ -162,12 +167,27 @@ const Checkout = () => {
               </div>
             </div>
 
-            <div className="under-card bg-white border border-mediumGray rounded-lg w-[69%] text-primaryGray">
+            <div className="under-card bg-white border-2 border-mediumGray rounded-lg w-[69%] text-primaryGray">
               <div className=" p-5">
                 <div className="flex flex-col">
                   <h3 className="text-start text-2xl font-semibold my-3">
                     Payment Method
                   </h3>
+
+                  <div className="flex justify-between py-7">
+                    <div className="flex flex-col justify-center items-center gap-4 px-24 py-8 border-2 border-mediumGray rounded-xl bg-primaryGray">
+                      <img src={Card} alt="icon" className="" />
+                      <p className="text-slate-50">Card</p>
+                    </div>
+                    <div className="flex flex-col justify-center items-center gap-4 px-24 py-8 border-2 border-mediumGray rounded-xl">
+                      <img src={Wallet} alt="icon" className="invert" />
+                      <p>Wallet</p>
+                    </div>
+                    <div className="flex flex-col justify-center items-center gap-4 px-24 py-8 border-2 border-mediumGray rounded-xl">
+                      <img src={Transfer} alt="icon" className="invert" />
+                      <p>Bank Transfer</p>
+                    </div>
+                  </div>
 
                   <div>
                     <div className="flex flex-col gap-3 w-full text-primaryGray">
