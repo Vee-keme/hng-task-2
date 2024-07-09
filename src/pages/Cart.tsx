@@ -379,7 +379,7 @@ const Cart = () => {
                         </div>
 
                         <div className="card-bottom flex justify-between mt-4">
-                          <div className="space-y-5">
+                          <div className="space-y-5 text-start">
                             <div>
                               <h3 className="text-primaryGray font-bold text-lg">
                                 French Kiss Bag
@@ -398,6 +398,7 @@ const Cart = () => {
                         </div>
                       </div>
                     </div>
+
                     <div className="card w-[30%] min-w-[300px]">
                       <div className="border-2 rounded-lg border-mediumGray p-4 w-full">
                         <div className="space-y-2">
@@ -438,7 +439,7 @@ const Cart = () => {
                         </div>
 
                         <div className="card-bottom flex justify-between mt-4">
-                          <div className="space-y-5">
+                          <div className="space-y-5 text-start">
                             <div>
                               <h3 className="text-primaryGray font-bold text-lg">
                                 French Kiss Bag
