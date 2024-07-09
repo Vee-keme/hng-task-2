@@ -15,12 +15,12 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import BottomCard from "../components/BottomCard";
 // import Card from "../components/Card";
 
-interface CardTypes {
-  itemTitle: string;
-  brand: string;
-  gender: string;
-  price: string;
-}
+// interface CardTypes {
+//   itemTitle: string;
+//   brand: string;
+//   gender: string;
+//   price: string;
+// }
 
 // const cardData: CardTypes[] = [
 //   {
