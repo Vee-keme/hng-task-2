@@ -101,7 +101,7 @@ const Home = () => {
             </div>
           </section>
         ) : (
-          <section className=" w-11/12 text-center space-y-8 py-10">
+          <section className=" w-11/12 text-center space-y-8 py-10 mx-auto">
             <div className="flex justify-between items-center">
               <h2 className="text-3xl font-bold self-start">TIMBU</h2>
               <div className=" rounded-full overflow-hidden bg-red-300">
