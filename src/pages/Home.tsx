@@ -122,12 +122,9 @@ const Home = () => {
             </div>
 
             <div className="flex justify-between items-center w-full">
-              <Link
-                to="/cart"
-                className="px-6 py-2 bg-white text-black rounded-md font-semibold w-full"
-              >
+              <button className="px-6 py-2 bg-white text-black rounded-md font-semibold w-full">
                 Explore Now
-              </Link>
+              </button>
             </div>
           </section>
         )}
@@ -202,7 +199,7 @@ const Home = () => {
                       </div>
                       <div className="self-end">
                         <button className="bg-primaryGray text-slate-50 py-3 px-6 rounded-xl">
-                          Add to Cart
+                          <Link to="/cart">Add to Cart</Link>
                         </button>
                       </div>
                     </div>
@@ -261,7 +258,7 @@ const Home = () => {
                       </div>
                       <div className="self-end">
                         <button className="bg-primaryGray text-slate-50 py-3 px-6 rounded-xl">
-                          Add to Cart
+                          <Link to="/cart">Add to Cart</Link>
                         </button>
                       </div>
                     </div>
@@ -320,7 +317,7 @@ const Home = () => {
                       </div>
                       <div className="self-end">
                         <button className="bg-primaryGray text-slate-50 py-3 px-6 rounded-xl">
-                          Add to Cart
+                          <Link to="/cart">Add to Cart</Link>
                         </button>
                       </div>
                     </div>
@@ -390,7 +387,7 @@ const Home = () => {
                       </div>
                       <div className="self-end">
                         <button className="bg-primaryGray text-slate-50 py-3 px-6 rounded-xl">
-                          Add to Cart
+                          <Link to="/cart">Add to Cart</Link>
                         </button>
                       </div>
                     </div>
@@ -449,7 +446,7 @@ const Home = () => {
                       </div>
                       <div className="self-end">
                         <button className="bg-primaryGray text-slate-50 py-3 px-6 rounded-xl">
-                          Add to Cart
+                          <Link to="/cart">Add to Cart</Link>
                         </button>
                       </div>
                     </div>
@@ -508,7 +505,7 @@ const Home = () => {
                       </div>
                       <div className="self-end">
                         <button className="bg-primaryGray text-slate-50 py-3 px-6 rounded-xl">
-                          Add to Cart
+                          <Link to="/cart">Add to Cart</Link>
                         </button>
                       </div>
                     </div>

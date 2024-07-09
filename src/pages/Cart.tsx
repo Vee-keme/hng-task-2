@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import useMediaQuery from "../hooks/useMediaQuery";
 import PinkShoe from "../assets/pink-shoe.png";
 import Heart from "../assets/heart.png";
@@ -187,7 +188,7 @@ const Cart = () => {
                           <p>Add to cart</p>
                         </button>
                         <button className="px-16 py-4 bg-black text-white rounded-lg font-semibold">
-                          Buy now
+                          <Link to="/checkout">Buy now</Link>
                         </button>
                       </div>
 
@@ -393,7 +394,7 @@ const Cart = () => {
                           </div>
                           <div className="self-end">
                             <button className="bg-primaryGray text-slate-50 py-3 px-6 rounded-xl">
-                              Add to Cart
+                              <Link to="/cart">Add to Cart</Link>
                             </button>
                           </div>
                         </div>
@@ -453,7 +454,7 @@ const Cart = () => {
                           </div>
                           <div className="self-end">
                             <button className="bg-primaryGray text-slate-50 py-3 px-6 rounded-xl">
-                              Add to Cart
+                              <Link to="/cart">Add to Cart</Link>
                             </button>
                           </div>
                         </div>
@@ -593,10 +594,10 @@ const Cart = () => {
                             alt="icon"
                             className="w-5 h-5 invert"
                           />
-                          <p>Add to cart</p>
+                          <Link to="/cart">Add to Cart</Link>
                         </button>
                         <button className="w-full px-16 py-4 bg-black text-white rounded-lg font-semibold">
-                          Buy now
+                          <Link to="/checkout">Buy now</Link>
                         </button>
                       </div>
 
