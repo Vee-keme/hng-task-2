@@ -507,7 +507,7 @@ const Cart = () => {
 
                     {/* second div */}
 
-                    <div className="flex flex-col gap-2 border-b-2 border-lightGray pb-4">
+                    <div className="flex flex-col gap-3 border-b-2 border-mediumGray p-5">
                       <div className="flex items-center gap-3 ">
                         <h3 className="font-bold text-xl">$150</h3>
                         <p className="text-mediumGray line-through">$300</p>
@@ -520,63 +520,63 @@ const Cart = () => {
                         50 units left
                       </p>
 
-                      <p className="text-start">
+                      <p className="text-start text-mediumGray">
                         +Shipping fee may vary on location
                       </p>
                       <div className="flex text-primaryGray">
                         <span>
                           <img src={Star} alt="star" />
                         </span>
-                        <p>1k+ rating</p>
+                        <p className="text-mediumGray">1k+ rating</p>
                       </div>
                     </div>
 
                     {/* third div */}
-                    <div className="flex flex-col gap-5 py-5">
-                      <div className="flex items-center gap-4 cursor-pointer">
+                    <div className="flex flex-col gap-5 p-5 border-b-2 border-mediumGray">
+                      <div className="flex items-center gap-3 cursor-pointer">
                         <p>Quantity: </p>
 
-                        <div className=" p-2 rounded-md bg-black">
-                          <span className="p-2 bg-black text-white">-</span>
-                          <span className="p-2 bg-white">1</span>
-                          <span className="p-2 bg-black text-white">+</span>
+                        <div className=" p-1.5 rounded-md bg-black">
+                          <span className="p-1.5 bg-black text-white">-</span>
+                          <span className="p-1.5 bg-white">1</span>
+                          <span className="p-1.5 bg-black text-white">+</span>
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-4">
+                      <div className="flex items-center gap-3">
                         <p>Size:</p>
 
                         <div className="flex gap-3">
-                          <span className="px-5 py-3  border border-mediumGray text-primaryGray rounded-md cursor-pointer">
+                          <span className="px-4 py-2  border border-mediumGray text-primaryGray rounded-md cursor-pointer">
                             20
                           </span>
-                          <span className="px-5 py-3 border border-mediumGray text-primaryGray rounded-md cursor-pointer">
+                          <span className="px-4 py-2 border border-mediumGray text-primaryGray rounded-md cursor-pointer">
                             25
                           </span>
-                          <span className="px-5 py-3 border border-mediumGray text-primaryGray rounded-md cursor-pointer">
+                          <span className="px-4 py-2 border border-mediumGray text-primaryGray rounded-md cursor-pointer">
                             32
                           </span>
-                          <span className="px-5 py-3 border border-mediumGray text-primaryGray rounded-md cursor-pointer">
+                          <span className="px-4 py-2 border border-mediumGray text-primaryGray rounded-md cursor-pointer">
                             37
                           </span>
                         </div>
                       </div>
 
-                      <div className="flex  items-center gap-4">
+                      <div className="flex  items-center gap-3">
                         <p>Color:</p>
 
                         <div className="flex gap-3">
-                          <div className="p-[10px] border-2 border-black rounded-lg flex items-center">
-                            <span className="p-[20px] bg-red-200 rounded-sm"></span>
+                          <div className="p-[5px] border-2 border-black rounded-lg flex items-center">
+                            <span className="p-[10px] bg-red-200 rounded-sm"></span>
                           </div>
-                          <span className="p-[10px] border-2 border-gray-400 rounded-lg flex items-center">
-                            <span className="p-[20px] bg-blue-600 rounded-sm"></span>
+                          <span className="p-[5px] border-2 border-gray-400 rounded-lg flex items-center">
+                            <span className="p-[10px] bg-blue-600 rounded-sm"></span>
                           </span>
-                          <span className="p-[10px] border-2 border-gray-400 rounded-lg flex items-center">
-                            <span className="p-[20px] bg-red-500 rounded-sm"></span>
+                          <span className="p-[5px] border-2 border-gray-400 rounded-lg flex items-center">
+                            <span className="p-[10px] bg-red-500 rounded-sm"></span>
                           </span>
-                          <span className="p-[10px] border-2 border-gray-400 rounded-lg flex items-center">
-                            <span className="p-[20px] bg-black rounded-sm"></span>
+                          <span className="p-[5px] border-2 border-gray-400 rounded-lg flex items-center">
+                            <span className="p-[10px] bg-black rounded-sm"></span>
                           </span>
                         </div>
                       </div>
