@@ -13,6 +13,35 @@ import TagProp from "../components/TagProp";
 import SmallCard from "../components/SmallCard";
 import useMediaQuery from "../hooks/useMediaQuery";
 import BottomCard from "../components/BottomCard";
+// import Card from "../components/Card";
+
+interface CardTypes {
+  itemTitle: string;
+  brand: string;
+  gender: string;
+  price: string;
+}
+
+// const cardData: CardTypes[] = [
+//   {
+//     itemTitle: "French Kiss Bag",
+//     brand: "FENDI",
+//     gender: "Women",
+//     price: "500",
+//   },
+//   {
+//     itemTitle: "French Kiss Bag",
+//     brand: "FENDI",
+//     gender: "Women",
+//     price: "500",
+//   },
+//   {
+//     itemTitle: "French Kiss Bag",
+//     brand: "FENDI",
+//     gender: "Women",
+//     price: "500",
+//   },
+// ];
 
 const Home = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
@@ -20,6 +49,11 @@ const Home = () => {
   return (
     <>
       {/* HERO */}
+
+      {/* {cardData.map((card, index) => {
+        
+        <Card itemTitle={card.itemTitle} />;
+      })} */}
       {isAboveMediumScreens ? (
         <section className=" w-11/12 text-center space-y-8 py-10">
           <div className="flex justify-between items-center">
@@ -457,12 +491,30 @@ const Home = () => {
         <section className="tagprops w-full py-10 bg-slate-50 ">
           <div className="w-11/12 m-auto overflow-x-scroll">
             <div className="flex justify-between items-center m-auto overflow-x-scroll">
-              <TagProp text="Men" />
-              <TagProp text="Women" />
-              <TagProp text="Kids" />
-              <TagProp text="Perfumes" />
-              <TagProp text="Sport " />
-              <TagProp text="Jewelry" />
+              <TagProp
+                text="Men"
+                className="border border-mediumGray px-3 py-1 sm:px-6 sm:py-2 md:px-8 md:py-3 lg:px-12 lg:py-4 xl:px-16 xl:py-4 text-primaryGray text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl  active:bg-primaryGray active:text-slate-50"
+              />
+              <TagProp
+                text="Women"
+                className="border border-mediumGray px-3 py-1 sm:px-6 sm:py-2 md:px-8 md:py-3 lg:px-12 lg:py-4 xl:px-16 xl:py-4 text-primaryGray text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl  active:bg-primaryGray active:text-slate-50"
+              />
+              <TagProp
+                text="Kids"
+                className="border border-mediumGray px-3 py-1 sm:px-6 sm:py-2 md:px-8 md:py-3 lg:px-12 lg:py-4 xl:px-16 xl:py-4 text-primaryGray text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl  active:bg-primaryGray active:text-slate-50"
+              />
+              <TagProp
+                text="Perfumes"
+                className="border border-mediumGray px-3 py-1 sm:px-6 sm:py-2 md:px-8 md:py-3 lg:px-12 lg:py-4 xl:px-16 xl:py-4 text-primaryGray text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl  active:bg-primaryGray active:text-slate-50"
+              />
+              <TagProp
+                text="Sport "
+                className="border border-mediumGray px-3 py-1 sm:px-6 sm:py-2 md:px-8 md:py-3 lg:px-12 lg:py-4 xl:px-16 xl:py-4 text-primaryGray text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl  active:bg-primaryGray active:text-slate-50"
+              />
+              <TagProp
+                text="Jewelry"
+                className="border border-mediumGray px-3 py-1 sm:px-6 sm:py-2 md:px-8 md:py-3 lg:px-12 lg:py-4 xl:px-16 xl:py-4 text-primaryGray text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl  active:bg-primaryGray active:text-slate-50"
+              />
             </div>
 
             <div className="tagprop-items ">

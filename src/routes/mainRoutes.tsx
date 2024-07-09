@@ -1,5 +1,6 @@
 import React from "react";
 import { Home, Cart } from "../pages";
+import Checkout from "../pages/Checkout";
 
 type Route = {
   path: string;
@@ -14,6 +15,10 @@ const mainRoutes: Route[] = [
   {
     path: "/cart",
     element: <Cart />,
+  },
+  {
+    path: "/checkout",
+    element: <Checkout />,
   },
 ];
 

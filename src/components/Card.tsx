@@ -2,19 +2,17 @@ import Heart from "../assets/heart.png";
 import Bag from "../assets/bag.png";
 import Star from "../assets/star.png";
 
-// interface CardTypes {
-//   itemTitle: string;
-// }
+interface CardTypes {
+  itemTitle: string;
+  brand: string;
+  gender: string;
+  price: string;
+}
 
-// const cardData = [
-//   {
-//     itemTitle: "French Kiss Bag",
-//   },
-// ];
-
-const Card = () => {
+const Card = ({ itemTitle }: CardTypes) => {
   return (
     <>
+      {itemTitle}
       <div className="card flex-1 basis-[30%]">
         <div className="border-2 rounded-lg border-mediumGray p-4 w-full">
           <div className="space-y-2">
@@ -68,6 +66,7 @@ const Card = () => {
           </div>
         </div>
       </div>
+      ;
     </>
   );
 };
