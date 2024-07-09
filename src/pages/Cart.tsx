@@ -581,8 +581,12 @@ const Cart = () => {
                         </div>
                       </div>
 
-                      <div className="w-full flex justify-between items-center">
-                        <button className="px-12 py-4 border-2 border-black bg-white text-black rounded-lg font-semibold flex items-center gap-3">
+                      <p className="text-[#006200] text-sm">
+                        Pickup & Pay on collection available
+                      </p>
+
+                      <div className="w-full flex flex-col gap-5 justify-between items-center">
+                        <button className="w-full px-12 py-4 border-2 border-black bg-white text-black rounded-lg font-semibold flex justify-center items-center gap-3">
                           <img
                             src={Bag}
                             alt="icon"
@@ -590,16 +594,12 @@ const Cart = () => {
                           />
                           <p>Add to cart</p>
                         </button>
-                        <button className="px-16 py-4 bg-black text-white rounded-lg font-semibold">
+                        <button className="w-full px-16 py-4 bg-black text-white rounded-lg font-semibold">
                           Buy now
                         </button>
                       </div>
 
-                      <p className="text-[#006200]">
-                        Pickup & Pay on collection available
-                      </p>
-
-                      <div className="space-y-3">
+                      <div className="space-y-3 mx-auto">
                         <p className="text-start">Share this product</p>
                         <div className="flex gap-3">
                           <img
@@ -620,20 +620,14 @@ const Cart = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                <div className="right-card w-[29%] bg-white border border-mediumGray rounded-lg">
-                  <div className=" ">
-                    <div className="w-full p-3 border-b border-mediumGray ">
-                      <p className="text-2xl font-semibold">
+                    <div className="w-full py-4 border-b border-mediumGray ">
+                      <p className="text-xl font-semibold">
                         Delivery and Returns
                       </p>
                     </div>
-
-                    <div className="w-11/12 mx-auto flex flex-col gap-4 py-2 ">
+                    <div className="w-full mx-auto flex flex-col gap-4 p-5 border-b-2 border-mediumGray ">
                       <div className="space-y-3">
-                        <p className="text-start font-semibold text-xl ">
+                        <p className="text-start font-semibold text-lg my-2 ">
                           Location
                         </p>
                         <FormControl fullWidth>
@@ -716,6 +710,8 @@ const Cart = () => {
                         </div>
                       </div>
                     </div>
+
+                    {/* here */}
                   </div>
                 </div>
               </div>
