@@ -376,23 +376,32 @@ const Checkout = () => {
                     Payment Method
                   </h3>
                 </div>
+
+                <div className="flex justify-between p-5 border-b-2 border-mediumGray gap-2">
+                  <div className="flex flex-col justify-center items-center gap-4 px-[10%] py-[2%] border-2 border-mediumGray rounded-xl bg-primaryGray">
+                    <img src={Card} alt="icon" className="" />
+                    <p className="text-slate-50">Card</p>
+                  </div>
+                  <div className="flex flex-col justify-center items-center gap-4 px-[10%] py-[2%] border-2 border-mediumGray rounded-xl">
+                    <img src={Wallet} alt="icon" className="invert" />
+                    <p className="text-mediumGray">Wallet</p>
+                  </div>
+                  <div className="flex flex-col justify-center items-center gap-4 px-[10%] py-[2%] border-2 border-mediumGray rounded-xl">
+                    <img src={Transfer} alt="icon" className="invert" />
+                    <p className="text-mediumGray">Transfer</p>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <button className="w-full px-20 py-4 bg-black text-white rounded-lg font-semibold">
+                    Place order
+                  </button>
+                </div>
               </div>
 
               <div className="right-card w-[29%] bg-white border-2 border-mediumGray rounded-lg">
                 <div className="text-primaryGray ">
                   <div className="w-11/12 mx-auto space-y-6 py-6">
-                    <div className="flex justify-between">
-                      <p className="text-primaryGray font-semibold">Total</p>
-                      <span className="text-primaryGray text-lg font-semibold">
-                        $165
-                      </span>
-                    </div>
-
-                    <div className="w-full mx-auto">
-                      <button className="px-20 py-4 bg-black text-white rounded-lg font-semibold">
-                        Place order
-                      </button>
-                    </div>
+                    <div className="w-full mx-auto"></div>
                   </div>
                 </div>
               </div>
@@ -401,25 +410,6 @@ const Checkout = () => {
             <div className="under-card bg-white border-2 border-mediumGray rounded-lg w-[69%] text-primaryGray">
               <div className=" p-5">
                 <div className="flex flex-col">
-                  <h3 className="text-start text-2xl font-semibold my-3">
-                    Payment Method
-                  </h3>
-
-                  <div className="flex justify-between py-7">
-                    <div className="flex flex-col justify-center items-center gap-4 px-24 py-8 border-2 border-mediumGray rounded-xl bg-primaryGray">
-                      <img src={Card} alt="icon" className="" />
-                      <p className="text-slate-50">Card</p>
-                    </div>
-                    <div className="flex flex-col justify-center items-center gap-4 px-24 py-8 border-2 border-mediumGray rounded-xl">
-                      <img src={Wallet} alt="icon" className="invert" />
-                      <p>Wallet</p>
-                    </div>
-                    <div className="flex flex-col justify-center items-center gap-4 px-24 py-8 border-2 border-mediumGray rounded-xl">
-                      <img src={Transfer} alt="icon" className="invert" />
-                      <p>Bank Transfer</p>
-                    </div>
-                  </div>
-
                   <div>
                     <div className="flex flex-col gap-3 w-full text-primaryGray">
                       <p className="text-start text-primaryGray font-semibold">
