@@ -440,7 +440,7 @@ const Checkout = () => {
                 </div>
 
                 <div className="p-5">
-                  <button className="w-full px-20 py-4 bg-black text-white rounded-lg font-semibold">
+                  <button className="w-full px-20 py-4 bg-black text-white rounded-lg font-semibold mb-5">
                     Place order
                   </button>
                 </div>
