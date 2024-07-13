@@ -79,7 +79,9 @@ const Card = ({ itemTitle, brand, gender, price, inStock }: CardTypes) => {
                 <p className="text-mediumGray">{brand}</p>
               </div>
               {/* <h3 className="text-primaryGray font-bold text-lg">$500</h3> */}
-              <h3 className="text-primaryGray font-bold text-lg">${price}</h3>
+              <h3 className="text-primaryGray font-bold text-lg">
+                ${price || "0"}
+              </h3>
             </div>
             <div className="self-end">
               <button
