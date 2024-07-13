@@ -19,37 +19,37 @@ import Card from "../components/Card";
 import { axiosInstance } from "../config/axiosInstance";
 import { useEffect, useState } from "react";
 
-interface CardTypes {
-  itemTitle: string;
-  brand: string;
-  gender: string;
-  price: string;
-  inStock: boolean;
-}
+// interface CardTypes {
+//   itemTitle: string;
+//   brand: string;
+//   gender: string;
+//   price: string;
+//   inStock: boolean;
+// }
 
-const cardData: CardTypes[] = [
-  {
-    itemTitle: "French Kiss Bag",
-    brand: "FENDI",
-    gender: "Women",
-    price: "500",
-    inStock: true,
-  },
-  {
-    itemTitle: "Burberry Shine",
-    brand: "FENDI",
-    gender: "Kids",
-    price: "150",
-    inStock: false,
-  },
-  {
-    itemTitle: "Alvero Gown",
-    brand: "DIVINE",
-    gender: "Women",
-    price: "300",
-    inStock: false,
-  },
-];
+// const cardData: CardTypes[] = [
+//   {
+//     itemTitle: "French Kiss Bag",
+//     brand: "FENDI",
+//     gender: "Women",
+//     price: "500",
+//     inStock: true,
+//   },
+//   {
+//     itemTitle: "Burberry Shine",
+//     brand: "FENDI",
+//     gender: "Kids",
+//     price: "150",
+//     inStock: false,
+//   },
+//   {
+//     itemTitle: "Alvero Gown",
+//     brand: "DIVINE",
+//     gender: "Women",
+//     price: "300",
+//     inStock: false,
+//   },
+// ];
 
 const Home = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
@@ -386,8 +386,7 @@ const Home = () => {
                 })} */}
                 {getProducts.map((product: any, index: any) => {
                   // const url = product.photos.map((photo) => photo.url);
-                  const url =
-                    product.photos.length > 0 ? product.photos[0].url : "";
+                  // const url = product.photos.length > 0 ? product.photos[0].url : "";
 
                   const currentPrice = product.current_price.map(
                     (item: any) => item[0]
