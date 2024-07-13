@@ -37,8 +37,9 @@ const Navbar = () => {
 
             <div>
               <ul className={`${flexCenter} gap-5`}>
-                <li>
+                <li className="flex items-center gap-1">
                   <a>Register/Sign In</a>
+                  <img src={DownwardArrow} alt="icon" className="w-5 h-5" />
                 </li>
                 <li>
                   <a>Home</a>
@@ -55,8 +56,9 @@ const Navbar = () => {
                 <li>
                   <a>Accessories</a>
                 </li>
-                <li>
+                <li className="flex items-center gap-1">
                   <a>More</a>
+                  <img src={DownwardArrow} alt="icon" className="w-5 h-5" />
                 </li>
               </ul>
             </div>
@@ -73,18 +75,19 @@ const Navbar = () => {
                     className="w-full bg-transparent focus:outline-none"
                   />
                 </div>
-                <div className="bg-primaryGray w-full h-full">
+                {/* <div className="bg-primaryGray w-full h-full">
                   <img
                     src={Search}
                     alt="timbu-search-icon"
                     className="invert"
                   />
-                </div>
+                </div> */}
               </div>
 
-              <div className={`${flexCenter} gap-5`}>
+              <div className={`${flexCenter} gap-2`}>
                 <img src={UK} alt="timbu-i18-currency" />
                 <p>EN/Currency</p>
+                <img src={DownwardArrow} alt="icon" />
               </div>
 
               <div className=" bg-primaryGray p-[5px] rounded-full flex items-center justify-center relative">
