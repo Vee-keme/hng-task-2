@@ -371,7 +371,7 @@ const Home = () => {
                     </div>
                   </div>
                 </div> */}
-                {cardData.map((card, index) => {
+                {/* {cardData.map((card, index) => {
                   const { itemTitle, brand, gender, price, inStock } = card;
                   return (
                     <Card
@@ -381,6 +381,24 @@ const Home = () => {
                       price={price}
                       inStock={inStock}
                       key={index}
+                    />
+                  );
+                })} */}
+                {getProducts.map((product: any, index: any) => {
+                  // const url = product.photos.map((photo) => photo.url);
+                  const url =
+                    product.photos.length > 0 ? product.photos[0].url : "";
+
+                  const currentPrice = product.current_price.map(
+                    (item: any) => item[0]
+                  );
+                  console.log(`current ${currentPrice}`);
+
+                  return (
+                    <Card
+                      itemTitle={product.name}
+                      key={index}
+                      inStock={product.is_available}
                     />
                   );
                 })}

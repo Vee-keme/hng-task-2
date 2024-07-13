@@ -4,6 +4,8 @@ import UK from "../assets/united kingdom.png";
 import Bag from "../assets/bag-2.png";
 import useMediaQuery from "../hooks/useMediaQuery";
 import Hamburger from "../assets/hamburger.svg";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 // type Props = {}
 
@@ -11,6 +13,14 @@ const Navbar = () => {
   const flexCenter = `flex justify-center items-center`;
 
   const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
+
+  const [cartItemCount, setCartItemCount] = useState(0);
+
+  useEffect(() => {
+    const existingCart = localStorage.getItem("cart");
+    const cart = existingCart ? JSON.parse(existingCart) : [];
+    setCartItemCount(cart.length);
+  }, []);
   return (
     <>
       {isAboveMediumScreens ? (
@@ -72,13 +82,20 @@ const Navbar = () => {
                 <p>EN/Currency</p>
               </div>
 
-              <div className=" bg-primaryGray p-[5px] rounded-full flex items-center justify-center">
-                <img
-                  src={Bag}
-                  alt="timbu-bag"
+              <div className=" bg-primaryGray p-[5px] rounded-full flex items-center justify-center relative">
+                <Link to="/cart">
+                  <img
+                    src={Bag}
+                    alt="timbu-bag"
 
-                  // className="w-[90%] h-[90%] bg-primaryGray p-2 rounded-full"
-                />
+                    // className="w-[90%] h-[90%] bg-primaryGray p-2 rounded-full"
+                  />
+                </Link>
+                {cartItemCount >= 0 && (
+                  <div className="right-[-10px] top-[-10px] bg-red-500 text-white rounded-full h-5 w-5 flex items-center justify-center absolute">
+                    <span className="text-sm">{cartItemCount}</span>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -107,8 +124,15 @@ const Navbar = () => {
                 />
               </div>
 
-              <div className=" bg-primaryGray p-[5px] rounded-full flex items-center justify-center">
-                <img src={Bag} alt="timbu-bag" className="w-6" />
+              <div className=" bg-primaryGray p-[5px] rounded-full flex items-center justify-center relative">
+                <Link to="/cart">
+                  <img src={Bag} alt="timbu-bag" />
+                </Link>
+                {cartItemCount >= 0 && (
+                  <div className="right-[-5px] top-[-5px] bg-red-500 text-white rounded-full h-4 w-4 flex items-center justify-center absolute">
+                    <span className="text-[8px]">{cartItemCount}</span>
+                  </div>
+                )}
               </div>
             </div>
           </div>

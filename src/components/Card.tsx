@@ -3,14 +3,29 @@ import Bag from "../assets/bag.png";
 import Star from "../assets/star.png";
 
 interface CardTypes {
-  itemTitle: string;
-  brand: string;
-  gender: string;
-  price: string;
-  inStock: boolean;
+  itemTitle?: string;
+  brand?: string;
+  gender?: string;
+  price?: string;
+  inStock?: boolean;
 }
 
 const Card = ({ itemTitle, brand, gender, price, inStock }: CardTypes) => {
+  const addToCart = () => {
+    const item = { itemTitle, brand, gender, price, inStock };
+
+    // we fetch items already available
+    const existingCart = localStorage.getItem("cart");
+    const cart = existingCart ? JSON.parse(existingCart) : [];
+
+    //push new item to already available should work
+    cart.push(item);
+
+    // update cart
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    console.log("Item added to cart:", item);
+  };
   return (
     <>
       <div className="card flex-1 basis-[30%] min-w-[300px] max-w-[33%]">
@@ -28,6 +43,7 @@ const Card = ({ itemTitle, brand, gender, price, inStock }: CardTypes) => {
 
                 <div className="bg-slate-50 px-[10px] py-[5px] rounded-3xl text-primaryGray">
                   <p>{inStock ? "In Stock" : "No Stock"}</p>
+
                   {/* <p>In Stock</p> */}
                 </div>
               </div>
@@ -39,7 +55,7 @@ const Card = ({ itemTitle, brand, gender, price, inStock }: CardTypes) => {
             <div className="flex justify-between items-center">
               <div className="border border-mediumGray px-[10px] py-[5px] rounded-3xl text-mediumGray">
                 {/* <p>women</p> */}
-                <p>{gender}</p>
+                <p>{gender || "Unisex"}</p>
               </div>
               <div className="flex text-primaryGray">
                 <span>
@@ -66,7 +82,10 @@ const Card = ({ itemTitle, brand, gender, price, inStock }: CardTypes) => {
               <h3 className="text-primaryGray font-bold text-lg">${price}</h3>
             </div>
             <div className="self-end">
-              <button className="bg-primaryGray text-slate-50 py-3 px-6 rounded-xl">
+              <button
+                className="bg-primaryGray text-slate-50 py-3 px-6 rounded-xl"
+                onClick={addToCart}
+              >
                 Add to Cart
               </button>
             </div>
