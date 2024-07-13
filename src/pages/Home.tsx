@@ -75,8 +75,8 @@ const Home = () => {
   return (
     <>
       <div className="bg-primaryGray w-full mx-auto">
-        <div className="bg-red-500 h-[50vh] text-white">
-          {/* {getProducts.map((product: any, index: any) => {
+        {/* <div className="bg-red-500 h-[50vh] text-white">
+          {getProducts.map((product: any, index: any) => {
             // const url = product.photos.map((photo) => photo.url);
             const url = product.photos.length > 0 ? product.photos[0].url : "";
             console.log(url);
@@ -87,8 +87,8 @@ const Home = () => {
                 <p key={index}>{product.name}</p>
               </div>
             );
-          })} */}
-        </div>
+          })}
+        </div> */}
         {/* HERO */}
         {/* {cardData.map((card, index) => {
           const { itemTitle, brand, gender, price, inStock } = card;
