@@ -58,7 +58,7 @@ const Home = () => {
   const fetchProducts = async () => {
     try {
       const response = await axiosInstance.get(
-        "products?organization_id=9a725124aee14005a5fe6e56003c7e42&Appid=KLXO7WPWG8GUVSW&Apikey=d4dd7d23afe84d4b831a089fd99961b620240713134957786380"
+        "products?organization_id=9a725124aee14005a5fe6e56003c7e42&Appid=KLXO7WPWG8GUVSW&Apikey=d4dd7d23afe84d4b831a089fd99961b620240713134957786380&size=3"
       );
       const data = response.data.items;
       console.log(data);
