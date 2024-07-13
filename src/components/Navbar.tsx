@@ -48,14 +48,23 @@ const Navbar = () => {
 
             <div className={`${flexCenter} gap-5`}>
               <div
-                className={`${flexCenter} gap-2 border border-mediumGray rounded-full w-[60%] px-4 py-2`}
+                className={`${flexCenter} gap-2 border border-mediumGray rounded-full w-[60%]`}
               >
-                <img src={Search} alt="timbu-search-icon" />
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="w-full bg-transparent focus:outline-none"
-                />
+                <div className={`${flexCenter} gap-2  px-4 py-2`}>
+                  <img src={Search} alt="timbu-search-icon" />
+                  <input
+                    type="text"
+                    placeholder="Search"
+                    className="w-full bg-transparent focus:outline-none"
+                  />
+                </div>
+                <div className="bg-primaryGray w-full h-full">
+                  <img
+                    src={Search}
+                    alt="timbu-search-icon"
+                    className="invert"
+                  />
+                </div>
               </div>
 
               <div className={`${flexCenter} gap-5`}>

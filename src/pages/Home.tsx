@@ -14,48 +14,96 @@ import SmallCard from "../components/SmallCard";
 import useMediaQuery from "../hooks/useMediaQuery";
 import BottomCard from "../components/BottomCard";
 import { Link } from "react-router-dom";
-// import Card from "../components/Card";
+import Card from "../components/Card";
 
-// interface CardTypes {
-//   itemTitle: string;
-//   brand: string;
-//   gender: string;
-//   price: string;
-// }
+import { axiosInstance } from "../config/axiosInstance";
+import { useEffect, useState } from "react";
 
-// const cardData: CardTypes[] = [
-//   {
-//     itemTitle: "French Kiss Bag",
-//     brand: "FENDI",
-//     gender: "Women",
-//     price: "500",
-//   },
-//   {
-//     itemTitle: "French Kiss Bag",
-//     brand: "FENDI",
-//     gender: "Women",
-//     price: "500",
-//   },
-//   {
-//     itemTitle: "French Kiss Bag",
-//     brand: "FENDI",
-//     gender: "Women",
-//     price: "500",
-//   },
-// ];
+interface CardTypes {
+  itemTitle: string;
+  brand: string;
+  gender: string;
+  price: string;
+  inStock: boolean;
+}
+
+const cardData: CardTypes[] = [
+  {
+    itemTitle: "French Kiss Bag",
+    brand: "FENDI",
+    gender: "Women",
+    price: "500",
+    inStock: true,
+  },
+  {
+    itemTitle: "Burberry Shine",
+    brand: "FENDI",
+    gender: "Kids",
+    price: "150",
+    inStock: false,
+  },
+  {
+    itemTitle: "Alvero Gown",
+    brand: "DIVINE",
+    gender: "Women",
+    price: "300",
+    inStock: false,
+  },
+];
 
 const Home = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
+  const [getProducts, setGetProducts] = useState<any[]>([]);
+
+  const fetchProducts = async () => {
+    try {
+      const response = await axiosInstance.get(
+        "products?organization_id=9a725124aee14005a5fe6e56003c7e42&Appid=KLXO7WPWG8GUVSW&Apikey=d4dd7d23afe84d4b831a089fd99961b620240713134957786380"
+      );
+      const data = response.data.items;
+      console.log(data);
+      setGetProducts(data);
+    } catch (error) {
+      console.error("Error fetching applicants:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   return (
     <>
       <div className="bg-primaryGray w-full mx-auto">
-        {/* HERO */}
+        <div className="bg-red-500 h-[50vh] text-white">
+          {getProducts.map((product: any, index: any) => {
+            // const url = product.photos.map((photo) => photo.url);
+            const url = product.photos.length > 0 ? product.photos[0].url : "";
+            console.log(url);
+            return (
+              <div>
+                <img src={url} alt="" className="bg-white" />
 
+                <p key={index}>{product.name}</p>
+              </div>
+            );
+          })}
+        </div>
+        {/* HERO */}
         {/* {cardData.map((card, index) => {
-        
-        <Card itemTitle={card.itemTitle} />;
-      })} */}
+          const { itemTitle, brand, gender, price, inStock } = card;
+          return (
+            <Card
+              itemTitle={itemTitle}
+              brand={brand}
+              gender={gender}
+              price={price}
+              inStock={inStock}
+              key={index}
+            />
+          );
+        })} */}
+
         {isAboveMediumScreens ? (
           <section className=" w-11/12 text-center space-y-8 py-10 mx-auto">
             <div className="flex justify-between items-center">
@@ -146,7 +194,7 @@ const Home = () => {
               </div>
 
               <div className="cards w-full my-5 flex justify-between items-center gap-4">
-                <div className="card w-[30%] min-w-[300px]">
+                {/* <div className="card w-[30%] min-w-[300px]">
                   <div className="border-2 rounded-lg border-mediumGray p-4 w-full">
                     <div className="space-y-2">
                       <div className="bg-lightGray rounded-lg ">
@@ -322,7 +370,20 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
+                {cardData.map((card, index) => {
+                  const { itemTitle, brand, gender, price, inStock } = card;
+                  return (
+                    <Card
+                      itemTitle={itemTitle}
+                      brand={brand}
+                      gender={gender}
+                      price={price}
+                      inStock={inStock}
+                      key={index}
+                    />
+                  );
+                })}
               </div>
             </div>
           </section>
