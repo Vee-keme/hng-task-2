@@ -10,7 +10,7 @@ export const axiosInstance = axios.create({
   },
 });
 export const getSingleProductInstance = axios.create({
-  baseURL: "https:///api.timbu.cloud/",
+  baseURL: "https://timbu-get-single-product.reavdev.workers.dev/",
   timeout: 50000,
   headers: {
     Accept: "application/json",

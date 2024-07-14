@@ -21,20 +21,17 @@ import Transfer from "../assets/transfer.png";
 
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import {
-  axiosInstance,
-  getSingleProductInstance,
-} from "../config/axiosInstance";
+import { getSingleProductInstance } from "../config/axiosInstance";
 
 const Checkout = () => {
   const { id } = useParams();
 
-  const [getSingleProduct, setGetSingleProduct] = useState<any[]>([]);
+  const [getSingleProduct, setGetSingleProduct] = useState<any[] | any>([]);
 
   const fetchSingleProduct = async () => {
     try {
       const response = await getSingleProductInstance.get(
-        `products/${id}?organization_id=9a725124aee14005a5fe6e56003c7e42`
+        `/${id}?organization_id=9a725124aee14005a5fe6e56003c7e42&Appid=KLXO7WPWG8GUVSW&Apikey=d4dd7d23afe84d4b831a089fd99961b620240713134957786380`
       );
       const data = response.data;
       console.log("checkout", data);
@@ -50,7 +47,6 @@ const Checkout = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
   return (
     <>
-      {/* <div></div> */}
       {isAboveMediumScreens ? (
         <section className=" w-11/12 text-center space-y-8 py-10 mx-auto">
           <div className="container w-full space-y-4">
@@ -139,11 +135,23 @@ const Checkout = () => {
                   <div className="w-11/12 mx-auto flex flex-col gap-4 py-2 border-b border-mediumGray">
                     <div className="w-full flex gap-4 mt-4">
                       <div className="bg-lightGray w-[30%] p-1 rounded-lg ">
-                        <img src={PinkShoe} alt="pink shoe" />
+                        {/* <img src={PinkShoe} alt="pink shoe" /> */}
+                        <img
+                          src={
+                            getSingleProduct?.photos?.length
+                              ? `https://api.timbu.cloud/images/${getSingleProduct.photos[0].url}`
+                              : ""
+                          }
+                          alt="pink shoe"
+                        />
                       </div>
 
                       <div className="text-start">
-                        <p className="font-bold text-lg">Burberry Shine</p>
+                        {/* <p className="font-bold text-lg">Burberry Shine</p> */}
+                        <p className="font-bold text-lg">
+                          {getSingleProduct.name}
+                        </p>
+
                         <p className="font-semibold text-thinborderGray">
                           FENDI
                         </p>
