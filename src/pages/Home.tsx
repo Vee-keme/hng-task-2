@@ -392,12 +392,16 @@ const Home = () => {
                     (item: any) => item[0]
                   );
                   console.log(`current ${currentPrice}`);
+                  // console.log("imageee", product?.photos[0]?.url);
 
                   return (
                     <Card
                       itemTitle={product.name}
                       key={index}
                       inStock={product.is_available}
+                      id={product.id}
+                      image={product?.photos[0]?.url}
+                      price={product?.current_price[0]?.USD[0]}
                     />
                   );
                 })}

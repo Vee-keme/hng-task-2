@@ -19,7 +19,34 @@ import Card from "../assets/card.png";
 import Wallet from "../assets/wallet.png";
 import Transfer from "../assets/transfer.png";
 
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import {
+  axiosInstance,
+  getSingleProductInstance,
+} from "../config/axiosInstance";
+
 const Checkout = () => {
+  const { id } = useParams();
+
+  const [getSingleProduct, setGetSingleProduct] = useState<any[]>([]);
+
+  const fetchSingleProduct = async () => {
+    try {
+      const response = await getSingleProductInstance.get(
+        `products/${id}?organization_id=9a725124aee14005a5fe6e56003c7e42`
+      );
+      const data = response.data;
+      console.log("checkout", data);
+      setGetSingleProduct(data);
+    } catch (error) {
+      console.error("Error fetching applicants:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchSingleProduct();
+  }, []);
   const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
   return (
     <>

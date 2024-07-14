@@ -17,7 +17,7 @@ const mainRoutes: Route[] = [
     element: <Cart />,
   },
   {
-    path: "/checkout",
+    path: "/checkout/:id",
     element: <Checkout />,
   },
 ];
