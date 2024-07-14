@@ -25,15 +25,20 @@ const SmallCard = () => {
   return (
     <>
       {getProducts.map((item: any, index: number) => {
-        console.log("item", item.name);
+        console.log("item", item.photos[0].url);
 
         return (
           <div className="card flex-1 basis-[15%] " key={index}>
             <div className="border-2 rounded-xl border-mediumGray p-4 w-full flex flex-col items-center justify-center space-y-1">
               <div className=" bg-lightGray rounded-lg flex justify-center py-3 px-4 ">
-                <img
+                {/* <img
                   className="h-[50%] w-[50%] self-center"
                   src={Bag}
+                  alt="hear-icon"
+                /> */}
+                <img
+                  className="h-[50%] w-[50%] self-center"
+                  src={`https://api.timbu.cloud/images/${item.photos[0].url}`}
                   alt="hear-icon"
                 />
               </div>

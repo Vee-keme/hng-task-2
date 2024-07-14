@@ -6,7 +6,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 // import Bag from "../assets/bag-2.png";
 // import Bus from "../assets/bus.png";
 // import Return from "../assets/return.png";
-import PinkShoe from "../assets/pink-shoe.png";
+// import PinkShoe from "../assets/pink-shoe.png";
 
 // import InputLabel from "@mui/material/InputLabel";
 // import MenuItem from "@mui/material/MenuItem";
@@ -301,12 +301,20 @@ const Checkout = () => {
                 <div className="w-full mx-auto flex flex-col gap-4 border-b-2 border-mediumGray p-5">
                   <div className="w-full flex gap-4">
                     <div className="bg-lightGray w-[30%] p-1 rounded-lg ">
-                      <img src={PinkShoe} alt="pink shoe" />
+                      {/* <img src={PinkShoe} alt="pink shoe" /> */}
+                      <img
+                        src={
+                          getSingleProduct?.photos?.length
+                            ? `https://api.timbu.cloud/images/${getSingleProduct.photos[0].url}`
+                            : ""
+                        }
+                        alt={getSingleProduct.name}
+                      />
                     </div>
 
                     <div className="text-start">
                       <p className="font-bold text-lg text-primaryGray">
-                        Burberry Shine
+                        {getSingleProduct.name}
                       </p>
                       <p className="font-semibold text-thinborderGray">FENDI</p>
                     </div>
