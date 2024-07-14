@@ -1,5 +1,5 @@
 import Heart from "../assets/heart.png";
-import Bag from "../assets/bag.png";
+// import Bag from "../assets/bag.png";
 import Star from "../assets/star.png";
 
 import { useNavigate } from "react-router-dom";
