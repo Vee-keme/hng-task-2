@@ -30,7 +30,7 @@ const Card = ({
   };
 
   const addToCart = () => {
-    const item = { itemTitle, brand, gender, price, inStock };
+    const item = { itemTitle, brand, gender, price, inStock, image };
 
     // we fetch items already available
     const existingCart = localStorage.getItem("cart");
@@ -72,7 +72,7 @@ const Card = ({
                 {/* <img src={Bag} alt="bag-icon" className="self-center" /> */}
                 <img
                   src={`https://api.timbu.cloud/images/${image}`}
-                  alt="bag-icon"
+                  alt={itemTitle}
                   className="self-center"
                 />
               </div>
