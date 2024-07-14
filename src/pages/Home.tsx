@@ -388,7 +388,7 @@ const Home = () => {
                   // const url = product.photos.map((photo) => photo.url);
                   // const url = product.photos.length > 0 ? product.photos[0].url : "";
 
-                  const currentPrice = product.current_price.map(
+                  const currentPrice = product.current_price?.map(
                     (item: any) => item[0]
                   );
                   console.log(`current ${currentPrice}`);
@@ -401,7 +401,7 @@ const Home = () => {
                       inStock={product.is_available}
                       id={product.id}
                       image={product?.photos[0]?.url}
-                      price={product?.current_price[0]?.USD[0]}
+                      // price={product?.current_price[0]?.USD[0]}
                     />
                   );
                 })}
