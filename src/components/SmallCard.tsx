@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Bag from "../assets/bag.png";
+// import Bag from "../assets/bag.png";
 import { axiosInstance } from "../config/axiosInstance";
 
 const SmallCard = () => {
