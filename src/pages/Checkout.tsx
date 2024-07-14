@@ -34,7 +34,7 @@ const Checkout = () => {
         `/${id}?organization_id=9a725124aee14005a5fe6e56003c7e42&Appid=KLXO7WPWG8GUVSW&Apikey=d4dd7d23afe84d4b831a089fd99961b620240713134957786380`
       );
       const data = response.data;
-      console.log("checkout", data);
+      console.log("checkout", data.extra_infos[0].value);
       setGetSingleProduct(data);
     } catch (error) {
       console.error("Error fetching applicants:", error);
@@ -152,8 +152,13 @@ const Checkout = () => {
                           {getSingleProduct.name}
                         </p>
 
-                        <p className="font-semibold text-thinborderGray">
+                        {/* <p className="font-semibold text-thinborderGray">
                           FENDI
+                        </p> */}
+                        <p className="font-semibold text-thinborderGray">
+                          {getSingleProduct.extra_infos[0].value
+                            ? getSingleProduct.extra_infos[0].value
+                            : "Unknown"}
                         </p>
                       </div>
                     </div>
