@@ -25,7 +25,7 @@ const SmallCard = () => {
   return (
     <>
       {getProducts.map((item: any, index: number) => {
-        console.log("item", item.photos[0].url);
+        // console.log("item", item.photos[0].url);
 
         return (
           <div className="card flex-1 basis-[15%] " key={index}>
@@ -38,7 +38,7 @@ const SmallCard = () => {
                 /> */}
                 <img
                   className="h-[50%] w-[50%] self-center"
-                  src={`https://api.timbu.cloud/images/${item.photos[0].url}`}
+                  src={`https://api.timbu.cloud/images/${item?.photos[0]?.url}`}
                   alt="hear-icon"
                 />
               </div>
