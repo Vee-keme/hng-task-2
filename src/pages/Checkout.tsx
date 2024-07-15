@@ -555,15 +555,15 @@ const Checkout = () => {
                 </div>
 
                 <div className="flex justify-between p-5 gap-2">
-                  <div className="flex flex-col justify-center items-center gap-4 px-[10%] py-[2%] border-2 border-mediumGray rounded-xl bg-primaryGray">
+                  <div className="flex flex-col justify-center items-center gap-4 px-[10%] py-[2%] border-2 border-mediumGray rounded-xl bg-primaryGray max-w-[30%]">
                     <img src={Card} alt="icon" className="" />
                     <p className="text-slate-50">Card</p>
                   </div>
-                  <div className="flex flex-col justify-center items-center gap-4 px-[10%] py-[2%] border-2 border-mediumGray rounded-xl">
+                  <div className="flex flex-col justify-center items-center gap-4 px-[10%] py-[2%] border-2 border-mediumGray rounded-xl max-w-[30%]">
                     <img src={Wallet} alt="icon" className="invert" />
                     <p className="text-mediumGray">Wallet</p>
                   </div>
-                  <div className="flex flex-col justify-center items-center gap-4 px-[10%] py-[2%] border-2 border-mediumGray rounded-xl">
+                  <div className="flex flex-col justify-center items-center gap-4 px-[10%] py-[2%] border-2 border-mediumGray rounded-xl max-w-[30%]">
                     <img src={Transfer} alt="icon" className="invert" />
                     <p className="text-mediumGray">Transfer</p>
                   </div>

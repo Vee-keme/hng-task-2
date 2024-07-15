@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logo from "../assets/timbu-logo.svg";
 import Search from "../assets/search.svg";
 import UK from "../assets/united kingdom.png";
@@ -9,12 +9,16 @@ import Hamburger from "../assets/hamburger.svg";
 import CloseIcon from "../assets/closeIcon.png";
 import forwardArrow from "../assets/forwardArrow.png";
 import DownwardArrow from "../assets/downArrow.png";
+import BackwardArrow from "../assets/navLeftArrow.svg";
 
 const Navbar = () => {
   const flexCenter = `flex justify-center items-center`;
   const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
   const [cartItemCount, setCartItemCount] = useState(0);
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const existingCart = localStorage.getItem("cart");
@@ -109,12 +113,23 @@ const Navbar = () => {
           <div className=" flex items-center justify-between w-11/12">
             <div className="w-full flex justify-between items-center gap-5">
               <div>
-                <img
-                  src={Hamburger}
-                  alt="hamburger icon"
-                  className="cursor-pointer"
-                  onClick={toggleSideMenu}
-                />
+                {location.pathname === "/" ? (
+                  <img
+                    src={Hamburger}
+                    alt="hamburger icon"
+                    className="cursor-pointer"
+                    onClick={toggleSideMenu}
+                  />
+                ) : (
+                  <Link to="/">
+                    <img
+                      src={BackwardArrow}
+                      alt="backward arrow"
+                      className="cursor-pointer"
+                      onClick={() => navigate(-1)}
+                    />
+                  </Link>
+                )}
               </div>
 
               <div className="w-auto h-auto">
