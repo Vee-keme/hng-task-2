@@ -30,7 +30,7 @@ const Card = ({
   };
 
   const addToCart = () => {
-    const item = { itemTitle, brand, gender, price, inStock, image };
+    const item = { itemTitle, brand, gender, price, inStock, image, id };
 
     // we fetch items already available
     const existingCart = localStorage.getItem("cart");

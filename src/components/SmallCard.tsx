@@ -2,7 +2,12 @@ import { useEffect, useState } from "react";
 // import Bag from "../assets/bag.png";
 import { axiosInstance } from "../config/axiosInstance";
 
+// import Bag from "../assets/bag.png";
+
+import { useNavigate } from "react-router-dom";
+
 const SmallCard = () => {
+  const navigate = useNavigate();
   const [getProducts, setGetProducts] = useState<any[]>([]);
 
   const fetchProducts = async () => {
@@ -22,13 +27,21 @@ const SmallCard = () => {
     fetchProducts();
   }, []);
 
+  // const handleCardClick = () => {
+  //   navigate(`/checkout/${id}`);
+  // };
+
   return (
     <>
       {getProducts.map((item: any, index: number) => {
         // console.log("item", item.photos[0].url);
 
         return (
-          <div className="card flex-1 basis-[15%] " key={index}>
+          <div
+            className="card flex-1 basis-[15%] "
+            key={index}
+            onClick={() => navigate(`/checkout/${item?.id}`)}
+          >
             <div className="border-2 rounded-xl border-mediumGray p-4 w-full flex flex-col items-center justify-center space-y-1">
               <div className=" bg-lightGray rounded-lg flex justify-center py-3 px-4 ">
                 {/* <img

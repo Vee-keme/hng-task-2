@@ -19,12 +19,40 @@ import Card from "../assets/card.png";
 import Wallet from "../assets/wallet.png";
 import Transfer from "../assets/transfer.png";
 
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getSingleProductInstance } from "../config/axiosInstance";
 
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+
+const schema = z.object({
+  name: z.string().min(1, { message: "Full Name is required" }),
+  address1: z.string().min(1, { message: "address1 is required" }),
+  address2: z.string().min(1, { message: "address2 is required" }),
+  city: z.string().min(1, { message: "City is required" }),
+  state: z.string().min(1, { message: "State is required" }),
+  zip: z.string().min(1, { message: "Zip Code is required" }),
+  nameOnCard: z.string().min(1, { message: "Card Holder Name is required" }),
+  cardNumber: z.string().min(1, { message: "Card Number is required" }),
+  expiryMonth: z.string().min(1, { message: "Expiry month is required" }),
+  expiryYear: z.string().min(1, { message: "Expiry Year is required" }),
+  cvv: z.string().min(1, { message: "CVV is required" }),
+});
+
 const Checkout = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: zodResolver(schema),
+  });
 
   const [getSingleProduct, setGetSingleProduct] = useState<any[] | any>([]);
 
@@ -46,11 +74,23 @@ const Checkout = () => {
     fetchSingleProduct();
   }, []);
 
+  const onSubmit = async (data: any) => {
+    const formData = new FormData();
+
+    formData.append("name", data.name);
+    alert("Thanks for buying");
+    reset();
+    navigate("/");
+  };
+
   const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
   return (
     <>
       {isAboveMediumScreens ? (
-        <section className=" w-11/12 text-center space-y-8 py-10 mx-auto">
+        <form
+          className=" w-11/12 text-center space-y-8 py-10 mx-auto"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <div className="container w-full space-y-4">
             <div className="flex justify-between">
               <div className="left-card w-[69%] bg-white border-2 border-mediumGray rounded-lg p-5 flex flex-col gap-6">
@@ -68,7 +108,11 @@ const Checkout = () => {
                       id="name"
                       label="First & Last Name"
                       variant="outlined"
+                      {...register("name")}
                     />
+                    {errors.name?.message && (
+                      <p>{errors.name?.message.toString()}</p>
+                    )}
                   </FormControl>
 
                   <p className="text-start text-primaryGray font-semibold">
@@ -77,10 +121,14 @@ const Checkout = () => {
                   <FormControl fullWidth>
                     {/* <InputLabel id="Location">Location</InputLabel> */}
                     <TextField
-                      id="Location"
+                      id="address1"
                       label="412, Dubai St"
                       variant="outlined"
+                      {...register("address1")}
                     />
+                    {errors.address1?.message && (
+                      <p>{errors.address1?.message.toString()}</p>
+                    )}
                   </FormControl>
 
                   <p className="text-start text-primaryGray font-semibold">
@@ -92,11 +140,15 @@ const Checkout = () => {
                       id="Location"
                       label="23rd, Boulevard Ave"
                       variant="outlined"
+                      {...register("address2")}
                     />
+                    {errors.address2?.message && (
+                      <p>{errors.address2?.message.toString()}</p>
+                    )}
                   </FormControl>
                 </div>
 
-                <div className="w-full flex justify-between">
+                <div className="w-full flex justify-between text-primaryGray">
                   <div className="space-y-3">
                     <p className="text-primaryGray text-start font-semibold">
                       City
@@ -105,7 +157,11 @@ const Checkout = () => {
                       id="city"
                       label="Enter City"
                       variant="outlined"
+                      {...register("city")}
                     />
+                    {errors.city?.message && (
+                      <p>{errors.city?.message.toString()}</p>
+                    )}
                   </div>
 
                   <div className="space-y-3">
@@ -116,14 +172,26 @@ const Checkout = () => {
                       id="state"
                       label="Select State"
                       variant="outlined"
+                      {...register("state")}
                     />
+                    {errors.state?.message && (
+                      <p>{errors.state?.message.toString()}</p>
+                    )}
                   </div>
 
                   <div className="space-y-3">
                     <p className="text-primaryGray text-start font-semibold">
                       Zip
                     </p>
-                    <TextField id="zip" label="Zip Code" variant="outlined" />
+                    <TextField
+                      id="zip"
+                      label="Zip Code"
+                      variant="outlined"
+                      {...register("zip")}
+                    />
+                    {errors.zip?.message && (
+                      <p>{errors.zip?.message.toString()}</p>
+                    )}
                   </div>
                 </div>
               </div>
@@ -242,7 +310,11 @@ const Checkout = () => {
                           id="nameOnCard"
                           label="First & Last Name"
                           variant="outlined"
+                          {...register("nameOnCard")}
                         />
+                        {errors.nameOnCard?.message && (
+                          <p>{errors.nameOnCard?.message.toString()}</p>
+                        )}
                       </FormControl>
 
                       <p className="text-start text-primaryGray font-semibold">
@@ -254,7 +326,11 @@ const Checkout = () => {
                           id="cardNumber"
                           label="0000 0000 0000 0000"
                           variant="outlined"
+                          {...register("cardNumber")}
                         />
+                        {errors.cardNumber?.message && (
+                          <p>{errors.cardNumber?.message.toString()}</p>
+                        )}
                       </FormControl>
                     </div>
                     <div className="w-full flex justify-between items-end mt-4">
@@ -262,7 +338,15 @@ const Checkout = () => {
                         <p className="text-primaryGray text-start font-semibold">
                           Expiry
                         </p>
-                        <TextField id="expiry" label="MM" variant="outlined" />
+                        <TextField
+                          id="expiryMonth"
+                          label="MM"
+                          variant="outlined"
+                          {...register("expiryMonth")}
+                        />
+                        {errors.expiryMonth?.message && (
+                          <p>{errors.expiryMonth?.message.toString()}</p>
+                        )}
                       </div>
 
                       <div className="space-y-3">
@@ -271,14 +355,26 @@ const Checkout = () => {
                           id="expiry"
                           label="YYYY"
                           variant="outlined"
+                          {...register("expiryYear")}
                         />
+                        {errors.expiryYear?.message && (
+                          <p>{errors.expiryYear?.message.toString()}</p>
+                        )}
                       </div>
 
                       <div className="space-y-3">
                         <p className="text-primaryGray text-start font-semibold">
                           CVV
                         </p>
-                        <TextField id="cvv" label="CVV" variant="outlined" />
+                        <TextField
+                          id="cvv"
+                          label="CVV"
+                          variant="outlined"
+                          {...register("cvv")}
+                        />
+                        {errors.cvv?.message && (
+                          <p>{errors.cvv?.message.toString()}</p>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -286,9 +382,12 @@ const Checkout = () => {
               </div>
             </div>
           </div>
-        </section>
+        </form>
       ) : (
-        <section className=" w-11/12 text-center space-y-8 py-10 mx-auto">
+        <form
+          className=" w-11/12 text-center space-y-8 py-10 mx-auto text-primaryGray"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <div className="container w-full space-y-4">
             <div className="flex flex-col justify-between">
               <div className="left-card w-full bg-white border-2 border-mediumGray rounded-lg flex flex-col">
@@ -362,7 +461,11 @@ const Checkout = () => {
                       id="name"
                       label="First & Last Name"
                       variant="outlined"
+                      {...register("name")}
                     />
+                    {errors.name?.message && (
+                      <p>{errors.name?.message.toString()}</p>
+                    )}
                   </FormControl>
 
                   <p className="text-start text-primaryGray font-semibold">
@@ -371,10 +474,14 @@ const Checkout = () => {
                   <FormControl fullWidth>
                     {/* <InputLabel id="Location">Location</InputLabel> */}
                     <TextField
-                      id="Location"
+                      id="address1"
                       label="412, Dubai St"
                       variant="outlined"
+                      {...register("address1")}
                     />
+                    {errors.address1?.message && (
+                      <p>{errors.address1?.message.toString()}</p>
+                    )}
                   </FormControl>
 
                   <p className="text-start text-primaryGray font-semibold">
@@ -386,7 +493,11 @@ const Checkout = () => {
                       id="Location"
                       label="23rd, Boulevard Ave"
                       variant="outlined"
+                      {...register("address2")}
                     />
+                    {errors.address2?.message && (
+                      <p>{errors.address2?.message.toString()}</p>
+                    )}
                   </FormControl>
                 </div>
 
@@ -399,7 +510,11 @@ const Checkout = () => {
                       id="city"
                       label="Enter City"
                       variant="outlined"
+                      {...register("city")}
                     />
+                    {errors.city?.message && (
+                      <p>{errors.city?.message.toString()}</p>
+                    )}
                   </div>
 
                   <div className="space-y-3 w-[45%]">
@@ -410,14 +525,26 @@ const Checkout = () => {
                       id="state"
                       label="Select State"
                       variant="outlined"
+                      {...register("state")}
                     />
+                    {errors.state?.message && (
+                      <p>{errors.state?.message.toString()}</p>
+                    )}
                   </div>
 
                   <div className="space-y-3 w-[45%]">
                     <p className="text-primaryGray text-start font-semibold">
                       Zip
                     </p>
-                    <TextField id="zip" label="Zip Code" variant="outlined" />
+                    <TextField
+                      id="zip"
+                      label="Zip Code"
+                      variant="outlined"
+                      {...register("zip")}
+                    />
+                    {errors.zip?.message && (
+                      <p>{errors.zip?.message.toString()}</p>
+                    )}
                   </div>
                 </div>
 
@@ -452,7 +579,11 @@ const Checkout = () => {
                       id="nameOnCard"
                       label="First & Last Name"
                       variant="outlined"
+                      {...register("nameOnCard")}
                     />
+                    {errors.nameOnCard?.message && (
+                      <p>{errors.nameOnCard?.message.toString()}</p>
+                    )}
                   </FormControl>
 
                   <p className="text-start text-primaryGray font-semibold">
@@ -464,7 +595,11 @@ const Checkout = () => {
                       id="cardNumber"
                       label="0000 0000 0000 0000"
                       variant="outlined"
+                      {...register("cardNumber")}
                     />
+                    {errors.cardNumber?.message && (
+                      <p>{errors.cardNumber?.message.toString()}</p>
+                    )}
                   </FormControl>
                 </div>
 
@@ -473,19 +608,43 @@ const Checkout = () => {
                     <p className="text-primaryGray text-start font-semibold">
                       Expiry
                     </p>
-                    <TextField id="expiry" label="MM" variant="outlined" />
+                    <TextField
+                      id="expiryMonth"
+                      label="MM"
+                      variant="outlined"
+                      {...register("expiryMonth")}
+                    />
+                    {errors.expiryMonth?.message && (
+                      <p>{errors.expiryMonth?.message.toString()}</p>
+                    )}
                   </div>
 
                   <div className="space-y-3 w-[45%]">
                     <p className="text-primaryGray text-start font-semibold"></p>
-                    <TextField id="expiry" label="YYYY" variant="outlined" />
+                    <TextField
+                      id="expiry"
+                      label="YYYY"
+                      variant="outlined"
+                      {...register("expiryYear")}
+                    />
+                    {errors.expiryYear?.message && (
+                      <p>{errors.expiryYear?.message.toString()}</p>
+                    )}
                   </div>
 
                   <div className="space-y-3 w-[45%]">
                     <p className="text-primaryGray text-start font-semibold">
                       CVV
                     </p>
-                    <TextField id="cvv" label="CVV" variant="outlined" />
+                    <TextField
+                      id="cvv"
+                      label="CVV"
+                      variant="outlined"
+                      {...register("cvv")}
+                    />
+                    {errors.cvv?.message && (
+                      <p>{errors.cvv?.message.toString()}</p>
+                    )}
                   </div>
                 </div>
 
@@ -497,7 +656,7 @@ const Checkout = () => {
               </div>
             </div>
           </div>
-        </section>
+        </form>
       )}
     </>
   );
