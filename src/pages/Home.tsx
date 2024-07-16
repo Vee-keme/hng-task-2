@@ -2,9 +2,6 @@ import Shirt from "../assets/shirt.svg";
 
 import Shoe from "../assets/shoe.svg";
 import Man from "../assets/man.svg";
-import Bag from "../assets/bag.png";
-import Heart from "../assets/heart.png";
-import Star from "../assets/star.png";
 
 import Hat2 from "../assets/heartpng.png";
 // import BlackShirt from "../assets/shirt.png";
@@ -75,34 +72,7 @@ const Home = () => {
   return (
     <>
       <div className="bg-primaryGray w-full mx-auto">
-        {/* <div className="bg-red-500 h-[50vh] text-white">
-          {getProducts.map((product: any, index: any) => {
-            // const url = product.photos.map((photo) => photo.url);
-            const url = product.photos.length > 0 ? product.photos[0].url : "";
-            console.log(url);
-            return (
-              <div>
-                <img src={url} alt="" className="bg-white" />
-
-                <p key={index}>{product.name}</p>
-              </div>
-            );
-          })}
-        </div> */}
         {/* HERO */}
-        {/* {cardData.map((card, index) => {
-          const { itemTitle, brand, gender, price, inStock } = card;
-          return (
-            <Card
-              itemTitle={itemTitle}
-              brand={brand}
-              gender={gender}
-              price={price}
-              inStock={inStock}
-              key={index}
-            />
-          );
-        })} */}
 
         {isAboveMediumScreens ? (
           <section className=" w-11/12 text-center space-y-8 py-10 mx-auto">
@@ -194,196 +164,6 @@ const Home = () => {
               </div>
 
               <div className="cards w-full my-5 flex justify-between items-center gap-4">
-                {/* <div className="card w-[30%] min-w-[300px]">
-                  <div className="border-2 rounded-lg border-mediumGray p-4 w-full">
-                    <div className="space-y-2">
-                      <div className="bg-lightGray rounded-lg ">
-                        <div className="flex justify-between p-4">
-                          <div className="bg-slate-50 p-2 rounded-full flex">
-                            <img
-                              className="h-[90%] w-[90%] self-center"
-                              src={Heart}
-                              alt="hear-icon"
-                            />
-                          </div>
-
-                          <div className="bg-slate-50 px-[10px] py-[5px] rounded-3xl text-primaryGray">
-                            <p>In Stock</p>
-                          </div>
-                        </div>
-                        <div className="w-full flex justify-center items-center mt-0 pt-0">
-                          <img
-                            src={Bag}
-                            alt="bag-icon"
-                            className="self-center"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="flex justify-between items-center">
-                        <div className="border border-mediumGray px-[10px] py-[5px] rounded-3xl text-mediumGray">
-                          <p>women</p>
-                        </div>
-                        <div className="flex text-primaryGray">
-                          <span>
-                            <img src={Star} alt="star" />
-                          </span>
-                          <p>2k rating</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="card-bottom flex justify-between mt-4">
-                      <div className="space-y-5">
-                        <div>
-                          <h3 className="text-primaryGray font-bold text-lg">
-                            French Kiss Bag
-                          </h3>
-                          <p className="text-mediumGray">ALDO</p>
-                        </div>
-                        <h3 className="text-primaryGray font-bold text-lg">
-                          $500
-                        </h3>
-                      </div>
-                      <div className="self-end">
-                        <button className="bg-primaryGray text-slate-50 py-3 px-6 rounded-xl">
-                          <Link to="/cart">Add to Cart</Link>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="card w-[30%] min-w-[300px]">
-                  <div className="border-2 rounded-lg border-mediumGray p-4 w-full">
-                    <div className="space-y-2">
-                      <div className="bg-lightGray rounded-lg ">
-                        <div className="flex justify-between p-4">
-                          <div className="bg-slate-50 p-2 rounded-full flex">
-                            <img
-                              className="h-[90%] w-[90%] self-center"
-                              src={Heart}
-                              alt="hear-icon"
-                            />
-                          </div>
-
-                          <div className="bg-slate-50 px-[10px] py-[5px] rounded-3xl text-primaryGray">
-                            <p>In Stock</p>
-                          </div>
-                        </div>
-                        <div className="w-full flex justify-center items-center mt-0 pt-0">
-                          <img
-                            src={Bag}
-                            alt="bag-icon"
-                            className="self-center"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="flex justify-between items-center">
-                        <div className="border border-mediumGray px-[10px] py-[5px] rounded-3xl text-mediumGray">
-                          <p>women</p>
-                        </div>
-                        <div className="flex text-primaryGray">
-                          <span>
-                            <img src={Star} alt="star" />
-                          </span>
-                          <p>2k rating</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="card-bottom flex justify-between mt-4">
-                      <div className="space-y-5">
-                        <div>
-                          <h3 className="text-primaryGray font-bold text-lg">
-                            French Kiss Bag
-                          </h3>
-                          <p className="text-mediumGray">ALDO</p>
-                        </div>
-                        <h3 className="text-primaryGray font-bold text-lg">
-                          $500
-                        </h3>
-                      </div>
-                      <div className="self-end">
-                        <button className="bg-primaryGray text-slate-50 py-3 px-6 rounded-xl">
-                          <Link to="/cart">Add to Cart</Link>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="card w-[30%] min-w-[300px]">
-                  <div className="border-2 rounded-lg border-mediumGray p-4 w-full">
-                    <div className="space-y-2">
-                      <div className="bg-lightGray rounded-lg ">
-                        <div className="flex justify-between p-4">
-                          <div className="bg-slate-50 p-2 rounded-full flex">
-                            <img
-                              className="h-[90%] w-[90%] self-center"
-                              src={Heart}
-                              alt="hear-icon"
-                            />
-                          </div>
-
-                          <div className="bg-slate-50 px-[10px] py-[5px] rounded-3xl text-primaryGray">
-                            <p>In Stock</p>
-                          </div>
-                        </div>
-                        <div className="w-full flex justify-center items-center mt-0 pt-0">
-                          <img
-                            src={Bag}
-                            alt="bag-icon"
-                            className="self-center"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="flex justify-between items-center">
-                        <div className="border border-mediumGray px-[10px] py-[5px] rounded-3xl text-mediumGray">
-                          <p>women</p>
-                        </div>
-                        <div className="flex text-primaryGray">
-                          <span>
-                            <img src={Star} alt="star" />
-                          </span>
-                          <p>2k rating</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="card-bottom flex justify-between mt-4">
-                      <div className="space-y-5">
-                        <div>
-                          <h3 className="text-primaryGray font-bold text-lg">
-                            French Kiss Bag
-                          </h3>
-                          <p className="text-mediumGray">ALDO</p>
-                        </div>
-                        <h3 className="text-primaryGray font-bold text-lg">
-                          $500
-                        </h3>
-                      </div>
-                      <div className="self-end">
-                        <button className="bg-primaryGray text-slate-50 py-3 px-6 rounded-xl">
-                          <Link to="/cart">Add to Cart</Link>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
-                {/* {cardData.map((card, index) => {
-                  const { itemTitle, brand, gender, price, inStock } = card;
-                  return (
-                    <Card
-                      itemTitle={itemTitle}
-                      brand={brand}
-                      gender={gender}
-                      price={price}
-                      inStock={inStock}
-                      key={index}
-                    />
-                  );
-                })} */}
                 {getProducts.map((product: any, index: any) => {
                   // const url = product.photos.map((photo) => photo.url);
                   // const url = product.photos.length > 0 ? product.photos[0].url : "";
@@ -415,184 +195,24 @@ const Home = () => {
                 <p className="font-bold text- xl">Latest Collections</p>
               </div>
 
-              <div className="cards w-full my-5 flex justify-between items-center gap-4 overflow-hidden">
-                <div className="card w-[30%] min-w-[300px]">
-                  <div className="border-2 rounded-lg border-mediumGray p-4 w-full">
-                    <div className="space-y-2">
-                      <div className="bg-lightGray rounded-lg ">
-                        <div className="flex justify-between p-4">
-                          <div className="bg-slate-50 p-2 rounded-full flex">
-                            <img
-                              className="h-[90%] w-[90%] self-center"
-                              src={Heart}
-                              alt="hear-icon"
-                            />
-                          </div>
+              <div className="cards w-full my-5 flex justify-between items-center gap-4">
+                {getProducts.map((product: any, index: any) => {
+                  // const currentPrice = product.current_price?.map(
+                  //   (item: any) => item[0]
+                  // );
+                  // // console.log(`current ${currentPrice}`);
 
-                          <div className="bg-slate-50 px-[10px] py-[5px] rounded-3xl text-primaryGray">
-                            <p>In Stock</p>
-                          </div>
-                        </div>
-                        <div className="w-full flex justify-center items-center mt-0 pt-0">
-                          <img
-                            src={Bag}
-                            alt="bag-icon"
-                            className="self-center"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="flex justify-between items-center">
-                        <div className="border border-mediumGray px-[10px] py-[5px] rounded-3xl text-mediumGray">
-                          <p>women</p>
-                        </div>
-                        <div className="flex text-primaryGray">
-                          <span>
-                            <img src={Star} alt="star" />
-                          </span>
-                          <p>2k rating</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="card-bottom flex justify-between mt-4">
-                      <div className="space-y-5">
-                        <div>
-                          <h3 className="text-primaryGray font-bold text-lg">
-                            French Kiss Bag
-                          </h3>
-                          <p className="text-mediumGray">ALDO</p>
-                        </div>
-                        <h3 className="text-primaryGray font-bold text-lg">
-                          $500
-                        </h3>
-                      </div>
-                      <div className="self-end">
-                        <button className="bg-primaryGray text-slate-50 py-3 px-6 rounded-xl">
-                          <Link to="/cart">Add to Cart</Link>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="card w-[30%] min-w-[300px]">
-                  <div className="border-2 rounded-lg border-mediumGray p-4 w-full">
-                    <div className="space-y-2">
-                      <div className="bg-lightGray rounded-lg ">
-                        <div className="flex justify-between p-4">
-                          <div className="bg-slate-50 p-2 rounded-full flex">
-                            <img
-                              className="h-[90%] w-[90%] self-center"
-                              src={Heart}
-                              alt="hear-icon"
-                            />
-                          </div>
-
-                          <div className="bg-slate-50 px-[10px] py-[5px] rounded-3xl text-primaryGray">
-                            <p>In Stock</p>
-                          </div>
-                        </div>
-                        <div className="w-full flex justify-center items-center mt-0 pt-0">
-                          <img
-                            src={Bag}
-                            alt="bag-icon"
-                            className="self-center"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="flex justify-between items-center">
-                        <div className="border border-mediumGray px-[10px] py-[5px] rounded-3xl text-mediumGray">
-                          <p>women</p>
-                        </div>
-                        <div className="flex text-primaryGray">
-                          <span>
-                            <img src={Star} alt="star" />
-                          </span>
-                          <p>2k rating</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="card-bottom flex justify-between mt-4">
-                      <div className="space-y-5">
-                        <div>
-                          <h3 className="text-primaryGray font-bold text-lg">
-                            French Kiss Bag
-                          </h3>
-                          <p className="text-mediumGray">ALDO</p>
-                        </div>
-                        <h3 className="text-primaryGray font-bold text-lg">
-                          $500
-                        </h3>
-                      </div>
-                      <div className="self-end">
-                        <button className="bg-primaryGray text-slate-50 py-3 px-6 rounded-xl">
-                          <Link to="/cart">Add to Cart</Link>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="card w-[30%] min-w-[300px]">
-                  <div className="border-2 rounded-lg border-mediumGray p-4 w-full">
-                    <div className="space-y-2">
-                      <div className="bg-lightGray rounded-lg ">
-                        <div className="flex justify-between p-4">
-                          <div className="bg-slate-50 p-2 rounded-full flex">
-                            <img
-                              className="h-[90%] w-[90%] self-center"
-                              src={Heart}
-                              alt="hear-icon"
-                            />
-                          </div>
-
-                          <div className="bg-slate-50 px-[10px] py-[5px] rounded-3xl text-primaryGray">
-                            <p>In Stock</p>
-                          </div>
-                        </div>
-                        <div className="w-full flex justify-center items-center mt-0 pt-0">
-                          <img
-                            src={Bag}
-                            alt="bag-icon"
-                            className="self-center"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="flex justify-between items-center">
-                        <div className="border border-mediumGray px-[10px] py-[5px] rounded-3xl text-mediumGray">
-                          <p>women</p>
-                        </div>
-                        <div className="flex text-primaryGray">
-                          <span>
-                            <img src={Star} alt="star" />
-                          </span>
-                          <p>2k rating</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="card-bottom flex justify-between mt-4">
-                      <div className="space-y-5">
-                        <div>
-                          <h3 className="text-primaryGray font-bold text-lg">
-                            French Kiss Bag
-                          </h3>
-                          <p className="text-mediumGray">ALDO</p>
-                        </div>
-                        <h3 className="text-primaryGray font-bold text-lg">
-                          $500
-                        </h3>
-                      </div>
-                      <div className="self-end">
-                        <button className="bg-primaryGray text-slate-50 py-3 px-6 rounded-xl">
-                          <Link to="/cart">Add to Cart</Link>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  return (
+                    <Card
+                      itemTitle={product.name}
+                      key={index}
+                      inStock={product.is_available}
+                      id={product.id}
+                      image={product?.photos[0]?.url}
+                      // price={product?.current_price[0]?.USD[0]}
+                    />
+                  );
+                })}
               </div>
             </div>
           </section>

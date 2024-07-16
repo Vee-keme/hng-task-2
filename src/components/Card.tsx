@@ -2,7 +2,7 @@ import Heart from "../assets/heart.png";
 // import Bag from "../assets/bag.png";
 import Star from "../assets/star.png";
 
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";s
 
 interface CardTypes {
   itemTitle?: string;
@@ -23,11 +23,11 @@ const Card = ({
   inStock,
   image,
 }: CardTypes) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleCardClick = () => {
-    navigate(`/checkout/${id}`);
-  };
+  // const handleCardClick = () => {
+  //   navigate(`/checkout/${id}`);
+  // };
 
   const addToCart = () => {
     const item = { itemTitle, brand, gender, price, inStock, image, id };
@@ -48,7 +48,7 @@ const Card = ({
     <>
       <div
         className="card flex-1 basis-[30%] min-w-[300px] max-w-[33%] "
-        onClick={handleCardClick}
+        // onClick={handleCardClick}
       >
         <div className="border-2 rounded-lg border-mediumGray p-4 w-full">
           <div className="space-y-2">
